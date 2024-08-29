@@ -43,7 +43,7 @@ gem "calendar_date_select"
 gem "notifications_opener"
 gem "messaging_gateway"
 
-gem "bootstrap", "~> 4.5.3"
+gem "bootstrap", "~> 5.3.3"
 gem "excon"
 
 group :development, :test do
