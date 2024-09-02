@@ -1,0 +1,17 @@
+@import "_variables";
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    height: 10vh;
+    width: 100%;
+    z-index: 999;
+    transition: top 0.3s ease-in-out;
+    position: fixed;
+    
+    &.scrolled {
+        top: -100px;
+    }
+
+}

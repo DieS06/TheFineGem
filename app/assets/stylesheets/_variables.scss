@@ -1,0 +1,15 @@
+/*COLOR PALLETTE VARIABLES*/
+$neutro-primary: #1A1014;
+$neutro-secondary: #490D0B;
+$middle-primary: #BF112C;
+$middle-secondary: #7B141F;
+$light-primary: #316A61;
+$light-secondary: #294745;
+
+$white: #FFFFFF;
+$black: #000000;
+
+/*GRADIENTS*/
+$two-gradient: linear-gradient(to bottom, $neutro-secondary,$neutro-primary, $neutro-primary);
+$two-sec-gradient: linear-gradient(to top, $neutro-secondary, $neutro-secondary);
+$border-gradient: linear-gradient(to bottom, $light-secondary, $white);
