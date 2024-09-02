@@ -9433,3 +9433,108 @@ Completed 200 OK in 12ms (Views: 8.4ms | ActiveRecord: 0.0ms (0 queries, 0 cache
 [dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, and [36mDBUSER[0m
 [dotenv] Loaded [33m.env[0m
 [dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, and [36mDBUSER[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, and [36mDBUSER[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 127.0.0.1 at 2024-09-01 20:12:14 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 64.9ms | GC: 0.0ms)
+  Rendered layouts/_nav-bar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 235.6ms | GC: 0.0ms)
+Completed 200 OK in 616ms (Views: 298.9ms | ActiveRecord: 20.7ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-01 20:12:16 -0600
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 5.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, and [36mDBUSER[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, and [36mDBUSER[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, and [36mDBUSER[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, and [36mDBUSER[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, and [36mDBUSER[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, and [36mDBUSER[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateHotels (20240902022011)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (25.1ms)[0m  [1m[35mCREATE TABLE "hotels" ("id" bigserial primary key, "name" character varying, "phone" character varying, "email" character varying, "description" text, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_0b43c6c3aa"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE INDEX "index_hotels_on_user_id" ON "hotels" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240902022011') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCatalogs (20240902022052)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.6ms)[0m  [1m[35mCREATE TABLE "catalogs" ("id" bigserial primary key, "hotel_id" bigint NOT NULL, "status" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_94e6c851fb"
+FOREIGN KEY ("hotel_id")
+  REFERENCES "hotels" ("id")
+)[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE INDEX "index_catalogs_on_hotel_id" ON "catalogs" ("hotel_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240902022052') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRooms (20240902022319)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (21.0ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" bigserial primary key, "type" integer, "code" character varying, "price_range" character varying, "status" boolean, "hotel_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_cae2c0f55d"
+FOREIGN KEY ("hotel_id")
+  REFERENCES "hotels" ("id")
+)[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE INDEX "index_rooms_on_hotel_id" ON "rooms" ("hotel_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240902022319') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateReserveRooms (20240902022453)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (25.9ms)[0m  [1m[35mCREATE TABLE "reserve_rooms" ("id" bigserial primary key, "start_date" timestamp(6), "end_date" timestamp(6), "status" boolean, "description" text, "user_id" bigint NOT NULL, "room_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_76f96df10b"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_618c0cdf3b"
+FOREIGN KEY ("room_id")
+  REFERENCES "rooms" ("id")
+)[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE INDEX "index_reserve_rooms_on_user_id" ON "reserve_rooms" ("user_id")[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE INDEX "index_reserve_rooms_on_room_id" ON "reserve_rooms" ("room_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240902022453') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateComments (20240902022608)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.8ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "body" text, "rate" float, "status" boolean, "user_id" bigint NOT NULL, "room_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_03de2dc08c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_9173c93ba1"
+FOREIGN KEY ("room_id")
+  REFERENCES "rooms" ("id")
+)[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE INDEX "index_comments_on_room_id" ON "comments" ("room_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240902022608') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
