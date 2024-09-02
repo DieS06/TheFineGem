@@ -6,8 +6,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     display: block;
-    align-items: center;
-    justify-content: center;
     width: 50%;
 }
 
@@ -48,11 +46,11 @@
     width: 100%;
     padding: 3rem;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    //box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba($light-primary, 0.3);
+    //background-color: rgba($light-primary, 0.3);
 
     &:after {
         right: -10px;
@@ -61,55 +59,100 @@
 
 .sec-login form input {
     width: 100%;
-    margin-bottom: 1rem;
-    border: none;
-    border-radius: 3px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);  
 }
 
 .field {
     display: flex;
     flex-direction: column;
     width: 50%;
-    margin-bottom: 1rem;
 }
 
 .inline-field{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 80%;
+    margin-bottom: 1.5rem;
+    margin-top: 0;
 }
 
 .field label {
     margin-left: 0.5rem;
+    margin-bottom: 0.2rem;
     font-family: "Roboto Flex", sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
     color: $white;
-    margin-bottom: 1rem;
 }
 
-.field .check-box .remember_me{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#user_email{
+    margin-bottom: 2rem;
+}
+
+#user_password{
+    margin-bottom: 0.5rem;
 }
 
 /*LOGIN BUTTON*/
 .actions {
     display: flex;
-    justify-content: space-between;
-    width: 50%;
-    margin-top: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
 }
 
 .actions input{
     background-color: $middle-primary;
     color: $white;
     transition: transform 0.3s;
+    width: 40% !important;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);  
 
     &:hover{
         background-color: $neutro-secondary;
         transform: scale(1.1);
+    }
+}
+
+.check-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+
+    input[type="checkbox"] {
+        margin-left: 80%;
+    }
+}
+
+.remember-me{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.devise-shared-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    a{
+        color: $middle-primary;
+        font-family: "Roboto Flex", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 400;
+        margin: 0 2rem;
+        transition: transform 0.3s;
+        text-decoration: none;
+
+        &:hover{
+            transform: scale(1.1);
+            color: $white;
+        }
     }
 }

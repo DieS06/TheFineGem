@@ -20,10 +20,11 @@
 
 body {
 font-family: 'Roboto Flex', sans-serif;
-background: $two-gradient;
+background: $custom-three-color-gradient;
 background-repeat: no-repeat;
 height: 100vh;
 width: 100%;
 color: $light-primary;
+overflow: hidden;
 }
 

@@ -1,9 +1,7 @@
     <nav>
-        <div class="column">
+        <div class="column links">
             <ul>
                 <li><a class="link-nav" href="/">Home</a></li>
-                <li><a class="link-nav" href="/about">About</a></li>
-                <li><a class="link-nav" href="/contact">Contact</a></li>
             </ul>
         </div>
         <div class="column log-btns">
@@ -11,10 +9,10 @@
                 <a href="/users/edit">Edit Profile</a>
                 <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
             <% else %>
-                    <div class= "btn-container">
-                        <button class="btn" href="/users/sign_in">Login</button>
-                        <button class="btn" href="/users/sign_up">Sign Up</button>
-                    </div>    
+                <div class= "btn-container">
+                    <%= link_to 'Log In', new_session_path(resource_name), class: 'btn' %>
+                    <%= link_to 'Sign Up', new_registration_path(resource_name), class: 'btn' %>
+                </div>    
             <% end %>
         </div>
     </nav>

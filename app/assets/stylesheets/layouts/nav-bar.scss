@@ -4,14 +4,65 @@ nav {
     display: flex;
     justify-content: space-between;
     top: 0;
-    height: 10vh;
+    height: 5vh;
     width: 100%;
     z-index: 999;
     transition: top 0.3s ease-in-out;
     position: fixed;
-    
+    margin-top: 1.5rem;
+    background: $border-fade-gradient 1px solid;
+
     &.scrolled {
         top: -100px;
     }
+}
 
+.column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    width: 100%;
+}
+
+.column .links {
+    display: flex;  
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-left: 2rem;
+}
+
+.link-nav {
+    text-decoration: none;
+    color: $white;
+
+    &:hover{
+        color: $middle-primary;
+    }
+}
+
+.btn-container{
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    width: 80%;
+    height: 100%;
+}
+
+.btn{
+    color: $white;
+    background-color: $light-primary;
+    border: none;
+    margin-left: 1rem;
+    width: 15%;
+
+    &:hover{
+        color: $middle-primary;
+    }
 }

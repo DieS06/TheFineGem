@@ -10,6 +10,15 @@ $white: #FFFFFF;
 $black: #000000;
 
 /*GRADIENTS*/
-$two-gradient: linear-gradient(to bottom, $neutro-secondary,$neutro-primary, $neutro-primary);
-$two-sec-gradient: linear-gradient(to top, $neutro-secondary, $neutro-secondary);
-$border-gradient: linear-gradient(to bottom, $light-secondary, $white);
+$custom-three-color-gradient: linear-gradient(to bottom, $neutro-secondary,$neutro-primary, $neutro-primary);
+$border-fade-gradient: linear-gradient(to right, $neutro-secondary, $light-primary, $neutro-secondary);
+
+
+// <div class="row">
+//   <div class="col-md-6">
+//     <!-- First column content here -->
+//   </div>
+//   <div class="col-md-6">
+//     <!-- Second column content here -->
+//   </div>
+// </div>
