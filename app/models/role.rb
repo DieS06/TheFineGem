@@ -1,4 +1,5 @@
 class Role < ApplicationRecord
-  validates :name, presence: true
-  validates :description, presence: true
+  belongs_to :user
+  validates :role_label, presence: true
+  validates :status, presence: true
 end
