@@ -1,0 +1,2 @@
+class ReserveRoomController < ApplicationController
+end

@@ -9538,3 +9538,103 @@ FOREIGN KEY ("room_id")
   [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(380015045638778550)[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 127.0.0.1 at 2024-09-01 22:16:07 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.1ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 46.1ms | GC: 0.0ms)
+  Rendered layouts/_nav-bar.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 267.0ms | GC: 0.0ms)
+Completed 200 OK in 694ms (Views: 359.9ms | ActiveRecord: 21.5ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-01 22:16:09 -0600
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2024-09-01 22:16:28 -0600
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 314ms (ActiveRecord: 2.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `dashboard_path' for an instance of Devise::SessionsController):
+  
+app/controllers/application_controller.rb:7:in `after_sign_in_path_for'
+Started GET "/" for 127.0.0.1 at 2024-09-01 22:16:46 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layouts/_nav-bar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 17.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-01 22:16:47 -0600
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 127.0.0.1 at 2024-09-01 22:57:54 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 34.4ms | GC: 0.0ms)
+  Rendered layouts/_nav-bar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 253.7ms | GC: 0.0ms)
+Completed 200 OK in 647ms (Views: 323.6ms | ActiveRecord: 21.7ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-01 22:57:56 -0600
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 5.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+

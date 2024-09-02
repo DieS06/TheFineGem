@@ -10,4 +10,6 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :phone, presence: true
   validates :id_number, presence: true
+  validates :email, presence: true
+  validates :password, presence: true
 end
