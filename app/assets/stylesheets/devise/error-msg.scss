@@ -1,0 +1,41 @@
+@import "_variables";
+
+#error_explanation{
+    color: $middle-primary;
+
+    h2{
+        text-align: center;
+        font-family: "New Amsterdam", sans-serif;
+        font-size: 2rem;
+        color: $middle-primary;
+        margin-bottom: 0.8rem;
+        position: relative;
+        background-color: rgba($light-primary, 0.3);
+        border-radius: 10px;
+        padding: 0.5rem;
+    }
+
+    ul{
+        display: flex;
+        list-style: none;
+        align-items: center;
+        justify-content: center;
+        li{
+            text-align: center;
+            font-family: "Roboto Flex", sans-serif;
+            color: $middle-primary;
+        }
+    }
+}
+
+.row 
+    .col-md-6 
+        .field 
+            .field_with_errors {
+                width: 100%;
+                    input {
+                        width: 100%;
+                    }   
+}
+
+

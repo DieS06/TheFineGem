@@ -7,9 +7,14 @@
        %>
     </h2>
     <ul>
-      <% resource.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% if resource.errors.count > 1 %>
+          <li><%= "Please fill missing fields" %></li>
+      <% else %>
+        <% resource.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       <% end %>
+    </ul>
     </ul>
   </div>
 <% end %>

@@ -10,17 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_02_022608) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_02_222944) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "catalogs", force: :cascade do |t|
-    t.bigint "hotel_id", null: false
-    t.boolean "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["hotel_id"], name: "index_catalogs_on_hotel_id"
-  end
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
@@ -88,11 +80,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_02_022608) do
     t.string "last_name"
     t.string "id_number"
     t.string "phone"
+    t.integer "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "catalogs", "hotels"
   add_foreign_key "comments", "rooms"
   add_foreign_key "comments", "users"
   add_foreign_key "hotels", "users"

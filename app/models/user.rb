@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_one :role
+  enum role: { guest: 0, user: 1, moderator: 2, propetary: 3, admin: 4 }
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -12,4 +12,5 @@ class User < ApplicationRecord
   validates :id_number, presence: true
   validates :email, presence: true
   validates :password, presence: true
+  validates :role, presence: true
 end

@@ -85,11 +85,11 @@
     color: $white;
 }
 
-#user_email{
+.sec-login #user_email{
     margin-bottom: 2rem;
 }
 
-#user_password{
+.sec-login #user_password{
     margin-bottom: 0.5rem;
 }
 
@@ -132,7 +132,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 60%;
+    width: 50%;
+    label{
+        color: $light-primary;
+    }
 }
 
 .devise-shared-links {

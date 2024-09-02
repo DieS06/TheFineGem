@@ -16,6 +16,12 @@
 
  @import "bootstrap";
  @import "layouts/nav-bar";
+ @import "layouts/footer";
+ @import "devise/change-password";
+ @import "devise/error-msg";
+ @import "devise/forgot-password";
+ @import "devise/log-in";
+ @import "devise/sign-up";
  @import "_variables";
 
 body {
@@ -28,3 +34,14 @@ color: $light-primary;
 overflow: hidden;
 }
 
+input {
+    background-color: rgba($light-primary, 0.3);
+    border: none;
+    border-radius: 3px;
+    
+    &:focus {
+        outline: none;
+        color: $white;
+        background-color: $neutro-primary;
+    }
+}

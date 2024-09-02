@@ -7,7 +7,7 @@
     transform: translate(-50%, -50%);
     display: block;
     width: 50%;
-    margin-top: 2.5rem;
+    margin-top: 1rem;
 }
 
 .sec-sign-up .main-title h2{
@@ -64,9 +64,19 @@
     width: 100%;
     .col-md-6{
         width: 50%;
-        .field{
+        .field {
             width: 100%;
             margin-bottom: 1rem;
         }
     }
 }
+
+.email-field{
+    width: 97%;
+    margin-top: 0.5;
+}
+
+.form-container form #user_email{
+    width: 100%;
+}
+
