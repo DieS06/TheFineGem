@@ -1,0 +1,21 @@
+@import "_variables";
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 6%;
+    width: 100%;
+    background-color: $light-secondary;
+    text-align: center;
+    padding: 1vh;
+    
+}
+
+p {
+    color: $middle-primary;
+    font-size: 1.5vh;
+    font-weight: 600;
+    padding-top: 0.8vh;
+    padding-bottom: 1vh;
+}

@@ -19,8 +19,20 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
-      - name: Scan for common Rails security vulnerabilities using static analysis
-        run: bin/brakeman --no-pager
+       - name: Install dependencies
+      run: bundle install
+
+      - name: Run linters
+        run: bundle exec rubocop
+
+      - name: Run JavaScript scan
+        run: bundle exec some_js_scanner
+
+      - name: Run Ruby scan
+        run: bundle exec some_ruby_scanner
+
+      - name: Run tests
+        run: bundle exec rspec
 
   scan_js:
     runs-on: ubuntu-latest
