@@ -20446,3 +20446,413 @@ in Rails 8.0. Positional arguments should be used instead:
 
 enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
  (called from <class:User> at e:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to ChangeStatusInReserveRoom (20240902233758)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240902233758') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at e:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at e:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at e:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at e:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at e:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at e:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at e:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to ChangeStatusInReserveRoom (20240903004706)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (28.1ms)[0m  [1m[35mALTER TABLE "reserve_rooms" ALTER COLUMN "status" TYPE integer USING status::integer[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "reserve_rooms" ADD "total_price" float[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240903004706') RETURNING "version"[0m
+  [1m[36mTRANSACTION (15.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at e:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddAttributesToRoom (20240903004921)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.3ms)[0m  [1m[35mALTER TABLE "room" ADD "beds" integer[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(380015045638778550)[0m
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddAttributesToRoom (20240903004921)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.7ms)[0m  [1m[35mALTER TABLE "rooms" ADD "beds" integer[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "rooms" ADD "capacity" integer[0m
+  [1m[35m (5.5ms)[0m  [1m[35mALTER TABLE "rooms" ADD "price_per_night" double[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(380015045638778550)[0m
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddAttributesToRoom (20240903004921)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.2ms)[0m  [1m[35mALTER TABLE "rooms" ADD "beds" integer[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "rooms" ADD "capacity" integer[0m
+  [1m[35m (3.7ms)[0m  [1m[35mALTER TABLE "rooms" ADD "price_per_night" double[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(380015045638778550)[0m
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddAttributesToRoom (20240903004921)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[35mALTER TABLE "rooms" ADD "beds" integer[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "rooms" ADD "capacity" integer[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "rooms" ADD "price_per_night" float[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "rooms" ADD "reserve_ids" integer[] DEFAULT '{}'[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240903004921') RETURNING "version"[0m
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveAttributeNameFromTableName (20240903010737)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.4ms)[0m  [1m[35mALTER TABLE "rooms" DROP COLUMN "price_range"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240903010737') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at e:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to ChangeFloatToDecimal (20240903055801)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (21.1ms)[0m  [1m[35mALTER TABLE "rooms" ALTER COLUMN "price_per_night" TYPE decimal USING price_per_night::decimal[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240903055801') RETURNING "version"[0m
+  [1m[36mTRANSACTION (10.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at e:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to ChangeFloatToDecimalTotalPrice (20240903060214)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (23.7ms)[0m  [1m[35mALTER TABLE "reserve_rooms" ALTER COLUMN "total_price" TYPE decimal USING total_price::decimal[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240903060214') RETURNING "version"[0m
+  [1m[36mTRANSACTION (12.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at e:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateAddresses (20240903061020)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE "addresses" ("id" bigserial primary key, "country" character varying, "city" character varying, "place_name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240903061020') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at e:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at e:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at e:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddAddressToHotel (20240903144200)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[35mALTER TABLE "hotels" ADD "address_id" bigint[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE INDEX "index_hotels_on_address_id" ON "hotels" ("address_id")[0m
+  [1m[35m (5.3ms)[0m  [1m[35mALTER TABLE "hotels" ADD CONSTRAINT "fk_rails_5481545d6c"
+FOREIGN KEY ("address_id")
+  REFERENCES "addresses" ("id")
+[0m
+  [1m[35m (7.8ms)[0m  [1m[35mALTER TABLE "hotel" ADD "rooms_ids" integer[] DEFAULT '{}'[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(380015045638778550)[0m
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (12.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddAddressToHotel (20240903144200)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.4ms)[0m  [1m[35mALTER TABLE "hotels" ADD "address_id" bigint[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE INDEX "index_hotels_on_address_id" ON "hotels" ("address_id")[0m
+  [1m[35m (5.3ms)[0m  [1m[35mALTER TABLE "hotels" ADD CONSTRAINT "fk_rails_5481545d6c"
+FOREIGN KEY ("address_id")
+  REFERENCES "addresses" ("id")
+[0m
+  [1m[35m (7.2ms)[0m  [1m[35mALTER TABLE "hotel" ADD "rooms_ids" integer[] DEFAULT '{}'[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(380015045638778550)[0m
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddAddressToHotel (20240903144200)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.0ms)[0m  [1m[35mALTER TABLE "hotels" ADD "address_id" bigint[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE INDEX "index_hotels_on_address_id" ON "hotels" ("address_id")[0m
+  [1m[35m (4.9ms)[0m  [1m[35mALTER TABLE "hotels" ADD CONSTRAINT "fk_rails_5481545d6c"
+FOREIGN KEY ("address_id")
+  REFERENCES "addresses" ("id")
+[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "hotels" ADD "rooms_ids" integer[] DEFAULT '{}'[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240903144200') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at e:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)

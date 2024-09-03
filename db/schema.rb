@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_02_222944) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_03_144200) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.string "country"
+    t.string "city"
+    t.string "place_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
@@ -34,37 +42,37 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_02_222944) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "address_id"
+    t.integer "rooms_ids", default: [], array: true
+    t.index ["address_id"], name: "index_hotels_on_address_id"
     t.index ["user_id"], name: "index_hotels_on_user_id"
   end
 
   create_table "reserve_rooms", force: :cascade do |t|
     t.datetime "start_date"
     t.datetime "end_date"
-    t.boolean "status"
+    t.integer "status"
     t.text "description"
     t.bigint "user_id", null: false
     t.bigint "room_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "total_price"
     t.index ["room_id"], name: "index_reserve_rooms_on_room_id"
     t.index ["user_id"], name: "index_reserve_rooms_on_user_id"
-  end
-
-  create_table "roles", force: :cascade do |t|
-    t.string "role_label"
-    t.boolean "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "rooms", force: :cascade do |t|
     t.integer "type"
     t.string "code"
-    t.string "price_range"
     t.boolean "status"
     t.bigint "hotel_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "beds"
+    t.integer "capacity"
+    t.decimal "price_per_night"
+    t.integer "reserve_ids", default: [], array: true
     t.index ["hotel_id"], name: "index_rooms_on_hotel_id"
   end
 
@@ -87,6 +95,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_02_222944) do
 
   add_foreign_key "comments", "rooms"
   add_foreign_key "comments", "users"
+  add_foreign_key "hotels", "addresses"
   add_foreign_key "hotels", "users"
   add_foreign_key "reserve_rooms", "rooms"
   add_foreign_key "reserve_rooms", "users"

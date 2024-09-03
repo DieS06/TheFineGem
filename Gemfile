@@ -41,11 +41,12 @@ gem "calendar_date_select"
 gem "notifications_opener"
 gem "messaging_gateway"
 gem "bootstrap", "~> 5.1"
-gem 'jquery-rails', '~> 4.4'
-gem 'dartsass-sprockets'
-gem 'popper_js'
+gem "jquery-rails", "~> 4.4"
+gem "dartsass-sprockets"
+gem "popper_js"
 gem "excon"
 gem "dotenv-rails"
+
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -56,6 +57,10 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  gem "rspec-rails"
+  gem "factory_bot_rails"
+  gem "faker"
 end
 
 group :development do

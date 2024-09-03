@@ -12,10 +12,9 @@ class UserController < ApplicationController
   end
 
   # Reservations management, history, with cancel and list functionalities
-  def show_reservations
-  end
-
-  def cancel_reservation
+  def reservation_history
+    @user = current_user
+    @reservations = @user.reservations
   end
 
   protected
