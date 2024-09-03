@@ -1,5 +1,12 @@
 class User < ApplicationRecord
-  enum role: { guest: 0, user: 1, moderator: 2, propetary: 3, admin: 4 }
+  has_many :hotels
+  has_many :payments
+  has_many :reserve_rooms
+  has_many :rooms, through: :reserve_rooms
+  has_many :comments
+
+  enum role: { guest: 0, user: 1, moderator: 2,
+   propetary: 3, admin: 4 }
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

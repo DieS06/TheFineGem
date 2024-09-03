@@ -20856,3 +20856,104 @@ in Rails 8.0. Positional arguments should be used instead:
 
 enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
  (called from <class:User> at e:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:2)
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:8)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreatePayments (20240903194655)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (19.7ms)[0m  [1m[35mCREATE TABLE "payments" ("id" bigserial primary key, "total_amount" decimal(10,2) NOT NULL, "payment_method" character varying NOT NULL, "status" character varying NOT NULL, "payment_date" timestamp(6) NOT NULL, "user_id" integer NOT NULL, "reserve_id" integer NOT NULL, "transaction_id" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (4.3ms)[0m  [1m[35mALTER TABLE "payments" ADD CONSTRAINT "fk_rails_081dc04a02"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (14.7ms)[0m  [1m[35mALTER TABLE "payments" ADD CONSTRAINT "fk_rails_4f4f9d5039"
+FOREIGN KEY ("reserf_id")
+  REFERENCES "reserves" ("id")
+[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(380015045638778550)[0m
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:8)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreatePayments (20240903194655)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.6ms)[0m  [1m[35mCREATE TABLE "payments" ("id" bigserial primary key, "total_amount" decimal(10,2) NOT NULL, "payment_method" character varying NOT NULL, "status" character varying NOT NULL, "payment_date" timestamp(6) NOT NULL, "user_id" integer NOT NULL, "reserve_id" integer NOT NULL, "transaction_id" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.8ms)[0m  [1m[35mALTER TABLE "payments" ADD CONSTRAINT "fk_rails_081dc04a02"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (13.3ms)[0m  [1m[35mALTER TABLE "payments" ADD CONSTRAINT "fk_rails_dd1edaf77d"
+FOREIGN KEY ("reserve_room_id")
+  REFERENCES "reserve_rooms" ("id")
+[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(380015045638778550)[0m
+[dotenv] Set [36mDBDEV[0m, [36mDBENCODING[0m, [36mDBHOST[0m, [36mDBPASSWORD[0m, [36mDBPOOL[0m, [36mDBPROD[0m, [36mDBTEST[0m, [36mDBUSER[0m, and [36mMAPS_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at E:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:8)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreatePayments (20240903194655)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.5ms)[0m  [1m[35mCREATE TABLE "payments" ("id" bigserial primary key, "total_amount" decimal(10,2) NOT NULL, "payment_method" character varying NOT NULL, "status" character varying NOT NULL, "payment_date" timestamp(6) NOT NULL, "user_id" integer NOT NULL, "reserve_id" integer NOT NULL, "transaction_id" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mALTER TABLE "payments" ADD CONSTRAINT "fk_rails_081dc04a02"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (3.4ms)[0m  [1m[35mALTER TABLE "payments" ADD CONSTRAINT "fk_rails_595415ffc7"
+FOREIGN KEY ("reserve_id")
+  REFERENCES "reserve_rooms" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240903194655') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeDecimalsPrecision (20240903194823)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (22.8ms)[0m  [1m[35mALTER TABLE "reserve_rooms" ALTER COLUMN "total_price" TYPE decimal(10,2)[0m
+  [1m[35m (14.3ms)[0m  [1m[35mALTER TABLE "rooms" ALTER COLUMN "price_per_night" TYPE decimal(10,2)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240903194823') RETURNING "version"[0m
+  [1m[36mTRANSACTION (19.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(380015045638778550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :role, {:guest=>0, :user=>1, :moderator=>2, :propetary=>3, :admin=>4}
+ (called from <class:User> at e:/00 - Cenfotec (Software)/Ruby On Rails Bootcamp/Proyecto HotelHub/TheFineGem/app/models/user.rb:8)

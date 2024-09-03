@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_03_144200) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_03_194823) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,6 +48,18 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_03_144200) do
     t.index ["user_id"], name: "index_hotels_on_user_id"
   end
 
+  create_table "payments", force: :cascade do |t|
+    t.decimal "total_amount", precision: 10, scale: 2, null: false
+    t.string "payment_method", null: false
+    t.string "status", null: false
+    t.datetime "payment_date", null: false
+    t.integer "user_id", null: false
+    t.integer "reserve_id", null: false
+    t.string "transaction_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "reserve_rooms", force: :cascade do |t|
     t.datetime "start_date"
     t.datetime "end_date"
@@ -57,7 +69,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_03_144200) do
     t.bigint "room_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.decimal "total_price"
+    t.decimal "total_price", precision: 10, scale: 2
     t.index ["room_id"], name: "index_reserve_rooms_on_room_id"
     t.index ["user_id"], name: "index_reserve_rooms_on_user_id"
   end
@@ -71,7 +83,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_03_144200) do
     t.datetime "updated_at", null: false
     t.integer "beds"
     t.integer "capacity"
-    t.decimal "price_per_night"
+    t.decimal "price_per_night", precision: 10, scale: 2
     t.integer "reserve_ids", default: [], array: true
     t.index ["hotel_id"], name: "index_rooms_on_hotel_id"
   end
@@ -97,6 +109,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_03_144200) do
   add_foreign_key "comments", "users"
   add_foreign_key "hotels", "addresses"
   add_foreign_key "hotels", "users"
+  add_foreign_key "payments", "reserve_rooms", column: "reserve_id"
+  add_foreign_key "payments", "users"
   add_foreign_key "reserve_rooms", "rooms"
   add_foreign_key "reserve_rooms", "users"
   add_foreign_key "rooms", "hotels"

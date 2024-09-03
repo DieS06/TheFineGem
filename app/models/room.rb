@@ -9,5 +9,5 @@ class Room < ApplicationRecord
   validates :beds, presence: true
   validates :capacity, presence: true
   validates :price_per_night, presence: true
-  validates :reserve_ids, presence: false
+  validates :reserve_ids, absence: true
 end
