@@ -1,13 +1,16 @@
 class PaymentController < ApplicationController
+  # GET /payments
   def index
     @payments = Payment.all
   end
 
+  # Get /payments/1
   def show
     @payment = Payment.find(params[:id])
     authorize! :read, @payment
   end
 
+  # GET /payments/new
   def new
     @payment = Payment.new(payment_params)
     authorize! :new, @payment
@@ -16,7 +19,7 @@ class PaymentController < ApplicationController
       redirect_to @payment
     else
       flash[:error] = "Payment was unsuccessful"
-      redirect_to root_path
+      redirect_to "hotels#index"
     end
   end
 
@@ -27,10 +30,10 @@ class PaymentController < ApplicationController
     @payment.reserve_id = params[:reserve_id]
     if @payment.save
       flash[:notice] = "Payment was successful"
-      redirect_to root_path
+      redirect_to "hotels#index"
     else
       flash[:error] = "Payment was unsuccessful"
-      redirect_to root_path
+      redirect_to "hotels#index"
     end
   end
 
@@ -54,7 +57,7 @@ class PaymentController < ApplicationController
     rescue_from CanCan::AccessDenied do |exception|
       respond_to do |format|
         format.json { head :forbidden }
-        format.html { redirect_to root_path, alert: exception.message }
+        format.html { redirect_to "hotels#index", alert: exception.message }
       end
     end
     render json: { error: exception.message }, status: 500

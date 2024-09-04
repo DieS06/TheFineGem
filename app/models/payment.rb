@@ -6,7 +6,7 @@ class Payment < ApplicationRecord
   enum status: { pending: "pending", completed: "completed",
   failed: "failed" }
 
-  validate :total_amount, presence: true
+  validates :total_amount, presence: true
   validates :payment_method, presence: true
   validates :status, presence: true
   validates :payment_date, presence: true

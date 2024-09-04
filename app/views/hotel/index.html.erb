@@ -1,0 +1,43 @@
+<% if %>
+
+<!--
+<% if user_signed_in? %>
+    You are signed as <%= current_user.email %> |
+    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+<% end %>
+-->
+<% end %>
+
+<div class= >
+    <h2>Hotel Catalog</h2>
+</div>
+
+<% @hotels.each do |hotel| %>
+    <div class="card">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card-body">
+                    <h5 class="card-title"><%= hotel.name %></h5>
+                    <p class="card-text"><%= hotel.description %></p>
+                    <!-- Add more hotel data here -->
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="<%= hotel.image_url %>" alt="<%= hotel.name %>">
+            </div> 
+        </div>
+    </div>
+<% end %>
+
+<!--
+<h1>My Articles</h1>
+<ul>
+    <% @articles.each do |article| %>
+        <li>
+            <%= link_to article.title, article %>
+        </li>
+    <% end %>
+</ul>
+<%# <%= link_to [Texto a mostrar], [ruta hacia donde dirigir] %>
+<%= link_to "New Article", new_article_path %>
+-->

@@ -19,7 +19,7 @@ class CommentController < ApplicationController
       redirect_to @comment
     else
       flash[:error] = "Comment was unsuccessful"
-      redirect_to root_path
+      redirect_to "hotels#index"
     end
   end
 
@@ -36,10 +36,10 @@ class CommentController < ApplicationController
     @comment.room_id = params[:room_id]
     if @comment.save
       flash[:notice] = "Comment was successful"
-      redirect_to root_path
+      redirect_to "hotels#index"
     else
       flash[:error] = "Comment was unsuccessful"
-      redirect_to root_path
+      redirect_to "hotels#index"
     end
   end
 
@@ -51,6 +51,6 @@ class CommentController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    redirect_to comments_url, notice: "Comment was successfully destroyed."
+    redirect_to "hotels#index", notice: "Comment was successfully destroyed."
   end
 end

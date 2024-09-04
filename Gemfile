@@ -45,7 +45,7 @@ gem "jquery-rails", "~> 4.4"
 gem "dartsass-sprockets"
 gem "popper_js"
 gem "excon"
-gem "dotenv-rails"
+gem "dotenv-rails", groups: [ :development, :test ]
 
 
 group :development, :test do

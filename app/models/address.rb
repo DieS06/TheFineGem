@@ -4,7 +4,7 @@ class Address < ApplicationRecord
   validates :city, presence: true
   validates :place_name, presence: true
 
-  def address
+  def compound_address
     "#{place_name}, #{city}, #{country}"
   end
 end
