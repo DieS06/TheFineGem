@@ -7,4 +7,12 @@ class Comment < ApplicationRecord
   validates :room_id, presence: true
   validates :body, presence: true
   validates :status, presence: true
+
+  def comment_detail
+    "User: #{user.full_name}\n" +
+    "Room: #{room.name}\n" +
+    "Rate: #{rate}\n" +
+    "Comment: #{body}\n" +
+    "Status: #{status}\n"
+  end
 end

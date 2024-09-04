@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users  
+  devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -12,14 +12,34 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  #root to: 'pages#index'
+  # root to: 'pages#index'
   devise_scope :user do
-    root 'devise/sessions#new'
+    root "devise/sessions#new"
   end
 
-  get 'about', to: 'pages#about'
-  get 'devise/sessions#new', to: 'devise/sessions#new'
-  get 'users/index', to: 'users#index'
+  get "about", to: "pages#about"
+  get "devise/sessions#new", to: "devise/sessions#new"
+  get "users/index", to: "users#index"
 
-  resources :pages
+  resources :users
+
+  resources :hotels do
+    resources :addresses, only: [ :index,
+     :show, :new, :create, :edit, :update,
+      :destroy ]
+    resources :rooms, only: [ :index,
+     :show, :new, :create, :edit, :update,
+      :destroy ] do
+      resources :comments, only: [ :index,
+       :show, :new, :create, :edit, :update,
+        :destroy ]
+      resources :reserve_rooms, only: [ :index,
+       :show, :new, :create, :edit, :update,
+        :destroy ] do
+        resources :payments, only: [ :index,
+         :show, :new, :create, :edit, :update,
+          :destroy ]
+      end
+    end
+  end
 end

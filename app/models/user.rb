@@ -5,8 +5,7 @@ class User < ApplicationRecord
   has_many :rooms, through: :reserve_rooms
   has_many :comments
 
-  enum role: { guest: 0, user: 1, moderator: 2,
-   propetary: 3, admin: 4 }
+  enum role: { guest: 0, client: 1, admin: 2 }
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
