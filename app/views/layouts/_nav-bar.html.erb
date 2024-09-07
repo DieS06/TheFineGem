@@ -1,18 +1,116 @@
+    <% resource_name = :user %>
+    <% resource = User.new %>
+    <% devise_mapping = Devise.mappings[:user] %>
+
     <nav>
         <div class="column links">
             <ul>
-                <li><a class="link-nav" href="/">Home</a></li>
-            </ul>
+                <li class="first-links">
+                    <a class="link-nav" href="/">
+                    <i class="bi bi-gem"></i>
+                    </a>
+                <% if user_signed_in? %>
+                    <% if current_user.role == 1 %>
+                        <li class="dropdown">
+                            <a class="link-nav dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Hotels
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="/hotels">Catalog</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/hotels/new">Add</a>
+                                </li>
+                            </ul>
+                        </li>
+                    <% else%>
+                        <li class="dropdown">
+                            <a class="link-nav dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Users
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="/users#index">List</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/users/new">Add</a>
+                                </li>
+                            </ul>
+                        </li> 
+                        <li class="dropdown">
+                            <a class="link-nav dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Hotels
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="/hotels">Catalog</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/hotels/new">Add</a>
+                                </li>
+                            </ul>
+                        </li> 
+                        <li class="dropdown">
+                            <a class="link-nav dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Rooms
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="/rooms/new">Add</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="link-nav dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Reservations
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="/reservations/new">Add</a>
+                                </li>
+                            </ul>
+                        </li> 
+                    <% end %>
+                <% else %>
+                    <li class="dropdown">
+                        <a class="dropdown-item" href="/hotels">Hotels</a>
+                    </li>  
+                <% end %>  
+            </ul> 
         </div>
         <div class="column log-btns">
             <% if user_signed_in? %>
-                <a href="/users/edit">Edit Profile</a>
-                <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+            <div class="btn-container">
+                <div class="container-fluid">
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">                    
+                            <i class="bi bi-person-circle"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                           <span class="ms-2"> <%= current_user.full_name %></span>
+                           <li>
+                                <a href="/users/edit">Profile</a>
+                            </li>
+                            <li>
+                                <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <% else %>
-                <div class= "btn-container">
-                    <%= link_to 'Log In', new_session_path(resource_name), class: 'btn' %>
-                    <%= link_to 'Sign Up', new_registration_path(resource_name), class: 'btn' %>
-                </div>    
+                <div class="btn-container">
+                    <% if (current_page?(new_session_path(resource_name)) || current_page?('/')) %>
+                        <div class="btn-sign-up">
+                            <%= link_to 'Sign Up', new_registration_path(resource_name), class: 'btn' %>
+                        </div>
+                    <%else%>
+                        <div class="btn-sign-in">
+                            <%= link_to 'Sign In', new_session_path(resource_name), class: 'btn' %>
+                        </div>
+                    <% end %>
+                </div>
             <% end %>
         </div>
     </nav>

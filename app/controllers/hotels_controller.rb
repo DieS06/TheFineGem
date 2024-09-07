@@ -1,27 +1,31 @@
 class HotelsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [ :new, :create, :edit, :update, :destroy ]
   load_and_authorize_resource
 
   # GET /hotels or /hotels.json
   def index
     @hotels = Hotel.all
+    @address = Address.all
+    @hotels = Hotel.page(params[:page]).per(2)
   end
 
   # GET /hotels/1 or /hotels/1.json
   def show
     @hotel = Hotel.find(params[:id])
-    authorize! :read, @hotel
+    @address = Address.find(params[:id])
   end
 
   # GET /hotels/new
   def new
     @hotel = Hotel.new
-    authorize! :new, @hotel
+    @address = Address.new
+    authorize! :new, @hotel, @address
   end
 
   # GET /hotels/1/edit
   def edit
     @hotel = Hotel.find(params[:id])
+    @address = @hotel.address
     authorize! :edit, @hotel
   end
 
@@ -29,10 +33,10 @@ class HotelsController < ApplicationController
   def create
     @hotel = Hotel.new(hotel_params)
     @hotel.user_id = current_user.id
-    if @hotel.save
+    if @hotel.save && @address.save
       flash[:notice] = "Hotel was successfully created."
     else
-      flash[:error] = "Hotel was unsuccessful"
+      flash[:error] = "Creation of the hotel was unsuccessful."
     end
   end
 
@@ -59,7 +63,11 @@ class HotelsController < ApplicationController
 
   private
   def hotel_params
-    params.require(:hotel).permit(:name, :phone, :email, :description, :user_id, :address_id)
+    params.require(:hotel).permit(:name, :phone, :email, :description, :user_id, :address_id, image: [])
+  end
+
+  def address_params
+    params.require(:address).permit(:street, :city, :state, :country, :zip_code)
   end
 
   def catch_exception(exception)

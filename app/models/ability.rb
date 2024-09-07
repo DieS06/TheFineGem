@@ -6,20 +6,17 @@ class Ability
   def initialize(user)
     user ||= User.new
 
-    if user.persisted?
-      case user.role_bedore_type_cast
-      when user.role[:admin]
-        can :manage, :all
-      when user.role[:client]
-        can :read, Payment, ReserveRoom, Room, Hotel,
-         User, Comment, Address
-      else
-        can :read, :Hotel, :Room, Comment, Address
-      end
-    end
-
-    can :destroy, Payment do |payment|
-      payment.user_id == user.id
+    if user.role == 2
+      can :manage, :all
+    elsif user.role == 1
+      can :read, :all
+      can :create, ReserveRoom
+      can :update, ReserveRoom, user_id: user.id
+      can :destroy, ReserveRoom, user_id: user.i
+    else
+      can :read, Hotel, action: :index
+      can :read, [ Room, ReserveRoom, Comment, Address ]
+      can :create, User
     end
   end
 

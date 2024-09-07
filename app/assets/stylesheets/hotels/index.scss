@@ -1,0 +1,160 @@
+@import "_variables";
+
+.sec-catalog {
+    position: absolute;
+    top: 8%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+    height: 100%;
+}
+
+.sec-catalog .main-title h2{
+    margin-top: 1rem;
+    font-size: 2.3rem;
+    &:before,
+    &:after {
+        width: 42%;
+    }
+}
+
+.card{
+    margin-bottom: 1rem;
+    margin-left: 12.5%;
+    margin-top: 1.5rem;
+    background: $side-fade-gradient;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    border: none;
+    width: 75%;
+
+    .card-title{
+        display: flex;
+        align-items: center;
+        color: $white;
+        justify-content: center;
+        font-family: "New Amsterdam", sans-serif;
+        font-size: 2rem;
+        margin: 0;
+        padding-left: 4rem;
+        text-shadow: 0 2px 4px rgba($neutro-primary, 0.5);
+    }
+
+    .row{
+        border-radius: 1rem;
+        padding: 0.3rem;
+        .col-md-6{
+            display: flex;
+            border-radius: 10rem 1rem 1rem 10rem;
+            padding: 0;
+            align-items: center;
+            justify-content: center;
+
+            .card-body{
+                .contact-info{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+
+                    
+                    .card-text{
+                        font-family: "Roboto Flex", sans-serif;
+                        color: $neutro-primary;
+                        font-size: 1rem;
+                    }
+                }
+
+                .container-with-label{
+                    label{
+                        display: block;
+                        font-family: "New Amsterdam", sans-serif;
+                        color: $middle-primary;
+                        font-size: 1rem;
+                        text-shadow: 0 2px 4px rgba($neutro-primary, 0.5);
+                        letter-spacing: 0.1rem;
+                    }
+                }
+
+                .card-text{
+                    font-family: "Roboto Flex", sans-serif;
+                    color: $neutro-primary;
+                    margin-bottom: 0.2rem;
+                    margin-left: 1rem;
+                    font-size: 0.8rem;
+                }
+            }
+
+            .carousel{
+                .carousel-inner{
+                    .carousel-item{
+                        img{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: inherit;
+                            height: 350px;
+                            border-radius: 10rem 1rem 1rem 10rem;
+                        }
+                    }
+                }
+            }
+
+            .btn{
+                width: 60%;
+            }
+        }
+    }
+}
+
+.pages{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+     nav{
+            background: $icon-bg-gradient;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            border-radius: 2rem;
+            padding: 0.3rem;
+            color: $white;
+            text-decoration: none;  
+            width: 75%;
+            margin-top: 4.2rem;
+
+                span{
+                    &:hover{
+                        color: $light-secondary;
+                    }
+                }
+                
+                .current{
+                    color: $light-primary;
+
+                    &:hover{
+                        color: $light-secondary;
+                    }
+                }
+
+                a{
+                    color: $white;
+                    text-decoration: none;
+        
+                    &:hover{
+                        color: $light-secondary;
+                    }
+                }
+        }
+}
+
+
+.row{
+    .col-md-6{
+
+    }
+}

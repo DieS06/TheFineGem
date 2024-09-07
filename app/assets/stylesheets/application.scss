@@ -22,16 +22,26 @@
  @import "devise/forgot-password";
  @import "devise/log-in";
  @import "devise/sign-up";
+ @import "hotels/index";
  @import "_variables";
 
 body {
-font-family: 'Roboto Flex', sans-serif;
-background: $custom-three-color-gradient;
-background-repeat: no-repeat;
-height: 100vh;
-width: 100%;
-color: $light-primary;
-overflow: hidden;
+    font-family: 'Roboto Flex', sans-serif;
+    height: 100vh;
+    width: 100%;
+    color: $light-primary;
+    overflow: hidden;
+    background: $custom-three-color-gradient;
+    background-repeat: no-repeat;
+}
+
+section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 50%;
 }
 
 input {
@@ -45,3 +55,137 @@ input {
         background-color: $neutro-primary;
     }
 }
+//MAIN TITLE
+.main-title h2{
+    text-align: center;
+    font-family: "New Amsterdam", sans-serif;
+    font-size: 7rem;
+    color: $white;
+    margin-bottom: 1.3rem;
+    position: relative;
+
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        top: 55%;
+        transform: translateY(-50%);
+        width: 30%;
+        background-color: rgba($light-primary, 0.3);
+        margin: 0 20px;
+        
+    }
+
+    &:before {
+        left: -20px; 
+        height: 100%;
+        border-radius: 10px 0px 0px 10px;
+    }
+
+    &:after {
+        right: -20px; 
+        height: 100%;
+        border-radius: 0px 10px 10px 0px;
+    }
+}
+
+// FORM CONTAINER
+.form-container form{
+    width: 100%;
+    padding: 3rem;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:before {
+        left: -10px;
+    }	
+    
+    &:after {
+        right: -10px;
+    }
+}
+
+// COLUMNS AND FIELDS
+.field {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+    .field_with_errors {
+        width: 100%;
+        input {
+            width: 100%;
+        }
+    }
+}
+
+.field label {
+    margin-left: 0.5rem;
+    margin-bottom: 0.2rem;
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: $white;
+}
+
+.row{
+    width: 100%;
+    .col-md-6{
+        width: 50%;
+        .field {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+// SUBMIT BUTTONS
+.actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.actions input{
+    background-color: $middle-primary;
+    color: $white;
+    transition: transform 0.3s;
+    width: 40% !important;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);  
+
+    &:hover{
+        background-color: $neutro-secondary;
+        transform: scale(1.1);
+    }
+}
+
+//DEVISE SHARED LINKS
+.devise-shared-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    a{
+        color: $middle-primary;
+        font-family: "Roboto Flex", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 400;
+        margin: 0 2rem;
+        transition: transform 0.3s;
+        text-decoration: none;
+
+        &:hover{
+            transform: scale(1.1);
+            color: $white;
+        }
+    }
+}
+

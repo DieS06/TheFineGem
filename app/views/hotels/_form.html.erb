@@ -1,0 +1,48 @@
+
+<%= form_with(model: @hotel, local: true) do |form| %>
+    <div class="field">
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+    </div>
+
+    <%= render partial: 'address/form', locals: { form: form } %>
+
+    <div class="field">
+        <%= form.label :city %>
+        <%= form.text_field :city %>
+    </div>
+
+    <div class="field">
+        <%= form.label :country %>
+        <%= form.text_field :country %>
+    </div>
+    <div class="field">
+        <%= form.label :image %>
+        <%= form.file_field :image %>
+    </div>
+
+    <div id="image-fields">
+        <!-- Add dynamic image fields here -->
+    </div>
+
+    <button type="button" onclick="addImageField()">Add Image</button>
+
+    <script>
+        function addImageField() {
+            var imageFields = document.getElementById("image-fields");
+            var newImageField = document.createElement("div");
+            newImageField.innerHTML = `
+                <div class="field">
+                    <%= form.label :image %>
+                    <%= form.file_field :image %>
+                </div>
+            `;
+            
+            imageFields.appendChild(newImageField);
+        }
+    </script>
+
+    <div class="actions">
+        <%= form.submit %>
+    </div>
+<% end %>

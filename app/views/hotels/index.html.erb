@@ -1,0 +1,68 @@
+<section class="sec-catalog">
+    <div class="main-title">
+        <h2>Hotel Catalog</h2>
+    </div>
+
+    <div class="hotels-container">
+        <div class="pages">
+            <%= paginate @hotels %>
+        </div>
+        <% @hotels.each do |hotel| %>
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-6 info">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= hotel.name %></h5>
+                            <div class="contact-info">
+                                <p class= "card-text"><%= hotel.phone%></p>
+                                <p class= "card-text"><%= hotel.email%></p>
+                            </div>
+                            <div class="container-with-label">
+                                <label>Address :</label>
+                                <p class="card-text"><%= hotel.address.compound_address %>
+                            </div>
+
+                            <div class="container-with-label">
+                                <label>About :</label>
+                                <p class="card-text"><%= hotel.description %></p>
+                            </div>
+                            <div class="container-rate">
+                                <label>Rate :</label>
+                                <p class="card-text"><%= hotel.rating %></p>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                        <%= link_to 'Reserve', reserve_room_path("/"), class: 'btn' %>   
+                                </div>
+                                <div class="col-md-6">
+                                        <%= link_to 'See more', reserve_room_path("/"), class: 'btn' %>
+                                </div>
+                            </div>                    
+                        
+                        </div>
+                    </div>
+                    <div class="col-md-6 image">
+                        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <% hotel.images.limit(3).each_with_index do |image, index| %>
+                                    <div class="carousel-item <%= 'active' if index == 0 %>">
+                                        <%= image_tag image %>
+                                    </div>
+                                <% end %>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        <% end %>
+
+    </div>
+</section>
