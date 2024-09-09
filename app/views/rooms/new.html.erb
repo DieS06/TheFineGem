@@ -1,0 +1,14 @@
+<section class="sec-create-rooms">
+  <div class="main-title">
+    <h2>Create Rooms</h2>
+  </div>
+<div class="form-container">
+     <% if can? :create, @room %>
+            <%= render 'form', room: @room %>
+        <% else %> 
+            <h1>Unauthorized</h1>
+            <p>You are not authorized to create a hotel</p>
+            <%= link_to 'Back', hotels_path %>
+        <% end %>
+    </div>
+</section>

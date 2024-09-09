@@ -1,0 +1,18 @@
+<div class="container-address">
+    <%= form_with(model: @address, local: true) do |form| %>
+        <div class="field">
+            <%= form.label :country %>
+            <%= form.text_field :country %>
+        </div>
+
+        <div class="field">
+            <%= form.label :city %>
+            <%= form.text_field :city %>
+        </div>
+
+        <div class="field">
+            <%= form.label :place_name %>
+            <%= form.text_field :place_name %>
+        </div>
+    <% end %>
+</div>

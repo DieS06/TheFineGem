@@ -1,15 +1,10 @@
 @import "_variables";
 
 footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    height: 6%;
     width: 100%;
-    background-color: $light-secondary;
-    text-align: center;
-    padding: 1vh;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 p {

@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 1
+  code: MyString
+  price_range: MyString
+  status: false
+  hotel: one
+
+two:
+  type: 1
+  code: MyString
+  price_range: MyString
+  status: false
+  hotel: two

@@ -1,0 +1,101 @@
+@import "_variables";
+
+.sec-list-rooms{
+    width: 90%;
+}
+
+.sec-list-rooms .main-title h2{
+    margin-top: 0.7rem;
+    font-size: 3rem;
+    &:before,
+    &:after {
+        width: 44%;
+    }
+}
+
+.sec-list-rooms .pages{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     nav{
+            background: $icon-bg-gradient;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            border-radius: 2rem;
+            padding: 0.3rem;
+            color: $white;
+            text-decoration: none;  
+            width: 100%;
+            margin-top: 5rem;
+
+                span{
+                    &:hover{
+                        color: $light-secondary;
+                    }
+                }
+                
+                .current{
+                    color: $light-primary;
+
+                    &:hover{
+                        color: $light-secondary;
+                    }
+                }
+
+                a{
+                    color: $white;
+                    text-decoration: none;
+        
+                    &:hover{
+                        color: $light-secondary;
+                    }
+                }
+        }
+}
+
+.sec-list-rooms table{
+    margin-top: 2.5rem;
+
+    th{
+        background: $table-header-gradient;
+        color: $white;
+        text-align: center;
+    }
+
+    td{
+        text-align: center;
+        background-color: $neutro-primary;
+        color: $white;
+
+        a {
+            background: $light-primary;
+            padding: 0.4rem;
+            border-radius: 0.4rem;
+            color: $white;
+            text-decoration: none;
+        }        
+    }
+}
+
+.td-update{
+    padding-right: 0;
+    .update{
+
+        &:hover{
+            color: $neutro-primary;
+            background:rgb(56, 89, 224);
+        }
+    }
+}
+
+.td-destroy{
+    padding-left: 0;
+    .destroy{
+    
+        &:hover{
+            color: $neutro-primary;
+            background:red;
+        }
+    }
+}

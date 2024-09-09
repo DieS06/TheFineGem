@@ -1,0 +1,11 @@
+<section class="sec-list-rooms">
+  <div class="main-title">
+    <h2>My Hotels</h2>
+  </div>
+    <div class="form-container">
+            <div class="pages">
+                <%= paginate @rooms %>
+            </div>
+            <%= render 'rooms/table', locals: { rooms: @rooms } %>
+        </div>
+</section>

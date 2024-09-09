@@ -1,0 +1,71 @@
+<%= form_with(model: @hotels, local: true) do |form| %>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="field">
+                <%= form.label :name %>
+                <%= form.text_field :name %>
+            </div>
+            <div class="field">
+                <%= form.label :phone %>
+                <%= form.text_field :phone %>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="field">
+                <%= form.label :last_name %>
+                <%= form.text_field :last_name %>
+            </div>
+            <div class="field">
+                <%= form.label :email %>
+                <%= form.text_field :email %>
+            </div>
+        </div>
+    </div>
+    <div class="field-description">
+        <%= form.label :description %>
+        <%= form.text_area :description %>
+    </div>
+
+        <%= render 'address/form', address: @hotel.address %>
+
+    <div class="first-image-field" id="image-fields">
+        <div class="field">
+            <%= form.label :image %>
+            <%= form.file_field :image %>
+        </div>
+    </div>
+
+    <div class="add-btn">
+        <button type="button" onclick="addImageField()">
+            <i class="bi bi-plus-circle-fill"></i>
+        </button>
+    </div>
+    <script>
+        function addImageField() {
+            var imageFields = document.getElementById("image-fields");
+            var imageFieldCount = imageFields.childElementCount;
+            if (imageFieldCount < 3) {
+                var newImageField = document.createElement("div");
+                newImageField.innerHTML = `
+                    <div class="field">
+                        <%= form.label :image %>
+                        <%= form.file_field :image %>
+                        <button type="button" onclick="deleteImageField(this)">
+                            <i class="bi bi-dash-circle-fill"></i>
+                        </button>
+                    </div>
+                `;
+                imageFields.appendChild(newImageField);
+            }
+        }
+
+        function deleteImageField(button) {
+            var imageField = button.parentNode;
+            imageField.parentNode.removeChild(imageField);
+        }
+    </script>
+
+    <div class="actions">
+        <%= form.submit %>
+    </div>
+<% end %>

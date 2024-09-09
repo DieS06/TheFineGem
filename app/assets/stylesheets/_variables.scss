@@ -10,6 +10,9 @@ $white: #FFFFFF;
 $black: #000000;
 
 /*GRADIENTS*/
-$two-gradient: linear-gradient(to bottom, $neutro-secondary,$neutro-primary, $neutro-primary);
-$two-sec-gradient: linear-gradient(to top, $neutro-secondary, $neutro-secondary);
-$border-gradient: linear-gradient(to bottom, $light-secondary, $white);
+$custom-three-color-gradient: linear-gradient(to bottom, $neutro-secondary,$neutro-primary, $neutro-primary);
+$border-fade-gradient: linear-gradient(to right, $neutro-secondary, $light-primary, $neutro-secondary);
+$side-fade-gradient: linear-gradient(to right, $light-secondary, $light-primary, $white);
+$icon-bg-gradient: linear-gradient(to top, $middle-primary, $middle-secondary);
+$bottom-border-fade: linear-gradient(to right, $middle-primary,  $light-secondary,  $light-primary, $light-primary);
+$table-header-gradient: linear-gradient(to bottom, $light-primary, $light-secondary);

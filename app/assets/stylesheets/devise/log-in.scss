@@ -1,115 +1,47 @@
 @import "_variables";
 
-.sec-login {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: block;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-}
-
-.sec-login .main-title h2{
-    text-align: center;
-    font-family: "New Amsterdam", sans-serif;
-    font-size: 7rem;
-    color: $white;
-    margin-bottom: 1.3rem;
-    position: relative;
-
-    &:before,
-    &:after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 30%;
-        background-color: rgba($light-primary, 0.3);
-        margin: 0 20px;
-        
-    }
-
-    &:before {
-        left: -20px; 
-        height: 100%;
-        border-radius: 10px 0px 0px 10px;
-    }
-
-    &:after {
-        right: -20px; 
-        height: 100%;
-        border-radius: 0px 10px 10px 0px;
-    }
-}
-
-.sec-login form {
-    width: 100%;
+.sec-login .form-container form {
     padding: 3rem;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba($light-primary, 0.3);
-
-    &:after {
-        right: -10px;
-    }
 }
 
 .sec-login form input {
     width: 100%;
-    margin-bottom: 1rem;
-    border: none;
-    border-radius: 3px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);  
 }
 
-.field {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    margin-bottom: 1rem;
-}
-
-.inline-field{
+.sec-login .inline-field{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 80%;
+    margin-bottom: 1.5rem;
+    margin-top: 0;
 }
 
-.field label {
-    margin-left: 0.5rem;
-    font-family: "Roboto Flex", sans-serif;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: $white;
-    margin-bottom: 1rem;
+.sec-login #user_email{
+    margin-bottom: 2rem;
 }
 
-.field .check-box .remember_me{
+.sec-login #user_password{
+    margin-bottom: 0.5rem;
+}
+
+.sec-login .check-box {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    width: 40%;
+
+    input[type="checkbox"] {
+        margin-left: 80%;
+    }
 }
 
-/*LOGIN BUTTON*/
-.actions {
+.sec-login .remember-me{
     display: flex;
+    align-items: center;
     justify-content: space-between;
     width: 50%;
-    margin-top: 1rem;
-}
-
-.actions input{
-    background-color: $middle-primary;
-    color: $white;
-    transition: transform 0.3s;
-
-    &:hover{
-        background-color: $neutro-secondary;
-        transform: scale(1.1);
+    label{
+        color: $light-primary;
     }
 }

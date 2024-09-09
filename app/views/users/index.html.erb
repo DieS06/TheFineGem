@@ -1,0 +1,11 @@
+<section class="sec-list-users">
+  <div class="main-title">
+    <h2>Users List</h2>
+  </div>
+    <div class="form-container">
+            <div class="pages">
+                <%= paginate @users %>
+            </div>
+        <%= render 'users/table', locals: { users: @users } %>    
+    </div>
+</section>

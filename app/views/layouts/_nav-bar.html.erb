@@ -1,20 +1,105 @@
+    <% resource_name = :user %>
+    <% resource = User.new %>
+    <% devise_mapping = Devise.mappings[:user] %>
+
     <nav>
-        <div class="column">
+        <div class="column links">
             <ul>
-                <li><a class="link-nav" href="/">Home</a></li>
-                <li><a class="link-nav" href="/about">About</a></li>
-                <li><a class="link-nav" href="/contact">Contact</a></li>
-            </ul>
+                <li class="first-links">
+                    <a class="link-nav" href="/">
+                    <i class="bi bi-gem"></i>
+                    </a>
+                <% if user_signed_in? %>
+                    <% if current_user.client?%>
+                        <li class="dropdown">
+                            <a class="link-nav dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Hotels
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="/hotels">Catalog</a>
+                                </li>
+                            </ul>
+                        </li>
+                    <% else%>
+                        <li class="dropdown">
+                            <a class="link-nav dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Users
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="/users">List Users</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/users/sign_up">Create User</a>
+                                </li>
+                            </ul>
+                        </li> 
+                        <li class="dropdown">
+                            <a class="link-nav dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Hotels
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="/hotels">Catalog</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/rooms">List Hotel</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/hotels/new">Create Hotel</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/rooms/new">Create Room</a>
+                                </li>
+                            </ul>
+                        </li> 
+                        <li class="dropdown">
+                            <a class="link-nav dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Reservations
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="/reservations/new">Add</a>
+                                </li>
+                            </ul>
+                        </li> 
+                    <% end %>
+                <% else %>
+                    <li class="catalog">
+                        <a class="link-catalog" href="/hotels">Hotels</a>
+                    </li>  
+                <% end %>  
+            </ul> 
         </div>
         <div class="column log-btns">
             <% if user_signed_in? %>
-                <a href="/users/edit">Edit Profile</a>
-                <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+            <div class="btn-container">
+                <div class="container-fluid">
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">                    
+                            <i class="bi bi-person-circle"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                           <span class="ms-2"> <%= current_user.full_name %></span>
+                                <li><%= link_to 'Profile', edit_registration_path(current_user), class: 'nav-link' %></li>
+                                <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <% else %>
-                    <div class= "btn-container">
-                        <button class="btn" href="/users/sign_in">Login</button>
-                        <button class="btn" href="/users/sign_up">Sign Up</button>
-                    </div>    
+                <div class="btn-container">
+                    <% if (current_page?(new_session_path(resource_name)) || current_page?('/')) %>
+                        <div class="btn-sign-up">
+                            <%= link_to 'Sign Up', new_registration_path(resource_name), class: 'btn' %>
+                        </div>
+                    <%else%>
+                        <div class="btn-sign-in">
+                            <%= link_to 'Sign In', new_session_path(resource_name), class: 'btn' %>
+                        </div>
+                    <% end %>
+                </div>
             <% end %>
         </div>
     </nav>

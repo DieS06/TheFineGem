@@ -1,0 +1,54 @@
+@import "_variables";
+
+.sec-sign-up {
+    margin-top: 1rem;
+}
+
+.sec-sign-up .form-container form{
+    padding: 1rem;
+    justify-content: center;
+
+    &.before {
+        left: -10px;
+    }	
+}
+
+.email-field{
+    width: 97% !important;
+    margin-bottom: 0.7rem;
+}
+
+#user_first_name {
+    color: $white;
+    padding-left: 1rem;
+}
+
+#user_last_name {
+    color: $white;
+    padding-left: 1rem;
+}
+
+#user_id_number {
+    color: $white;
+    padding-left: 1rem;
+}
+
+#user_phone {
+    color: $white;
+    padding-left: 1rem;
+}
+
+#user_email {
+    color: $white;
+    padding-left: 1rem;
+}
+
+#user_password {
+    color: $white;
+    padding-left: 1rem;
+}
+
+#user_password_confirmation {
+    color: $white;
+    padding-left: 1rem;
+}
