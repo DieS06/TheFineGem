@@ -1,13 +1,10 @@
-## Versions
+## Prerequisites
 
-Ruby version.
-```bash
-ruby 3.3.4
-```
+Ruby [3.3.4](https://rubyinstaller.org/downloads/)
 
-Rails version.
+Rails [7.2.1](https://rubygems.org/gems/rails/versions/7.2.1?locale=es)
 ```bash
-rails 7.2.1
+gem install rails -v 7.2.1
 ```
 
 ## First Steps
