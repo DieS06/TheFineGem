@@ -1,28 +1,28 @@
-# README
+## Versions
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby version.
+```bash
+ruby 3.3.4
+```
 
-Things you may want to cover:
+Rails version.
+```bash
+rails 7.2.1
+```
 
-* Ruby version
+## First Steps
 
-* System dependencies
+```python
 
-* Configuration
+# 1. Install all dependencies
+bundle install
 
-* Database creation
+# 2. Create database, migrations and seeds
+rails db:create db:migrate db:seed
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
+# 3. Run project
+rails server
+```
 
 <h1 align="center">Hi 👋, I'm Juan Diego Sequeira</h1>
 <h3 align="center">A passionate Designer, 3D Artist and Software Developer</h3>
