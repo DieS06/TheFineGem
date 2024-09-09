@@ -189,3 +189,27 @@ input {
     }
 }
 
+//TABLES
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+th, td {
+    padding: 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid $light-primary;
+}
+
+th {
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: $neutro-primary;
+}
+
+tr:hover {
+    background-color: $neutro-secondary;
+}

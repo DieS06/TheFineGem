@@ -6,58 +6,21 @@ class Ability
   def initialize(user)
     user ||= User.new
 
-    if user.role == 2
-      can :manage, :all
-    elsif user.role == 1
-      can :read, :all
-      can :create, ReserveRoom
-      can :update, ReserveRoom, user_id: user.id
-      can :destroy, ReserveRoom, user_id: user.i
+    if user.admin?
+        can :manage, :all
+    elsif user.client?
+          can :read, Hotel, action: :index
+          can :read, [ Room, ReserveRoom, Comment, Address ]
+          can :create, [ User, ReserveRoom ]
+          can :update, ReserveRoom, User: user
+          can :destroy, ReserveRoom, User: user
     else
-      can :read, Hotel, action: :index
-      can :read, [ Room, ReserveRoom, Comment, Address ]
-      can :create, User
+          can :read, Hotel, action: :index
+          can :read, Room, through: Hotel
+          can :read, ReserveRoom, through: Room
+          can :read, Comment, through: Hotel
+          can :read, Address, through: Hotel
+          can :create, User, action: :new
     end
   end
-
-  #   if user.admin?
-  #     can :manage, :all  # Admins can manage everything
-  #   else
-  #     can :read, :all  # Regular users can read everything
-  #     can :create, Article  # Regular users can create articles
-  #     can :update, Article, user_id: user.id  # Users can only update their own articles
-  #     cannot :delete, Article  # Users cannot delete articles
-  #   end
-  # end
-
-  # can :manage, :all: Allows all actions (CRUD) on all resources.
-  # can :read, :all: Allows the user to read all resources.
-  # can :create, Article: Allows the user to create an article.
-  # can :update, Article, user_id: user.id: Allows the user to update only their own articles.
-  # cannot :delete, Article: Prevents the user from deleting articles.
-
-  # Define abilities for the user here. For example:
-  #
-  #   return unless user.present?
-  #   can :read, :all
-  #   return unless user.admin?
-  #   can :manage, :all
-  #
-  # The first argument to `can` is the action you are giving the user
-  # permission to do.
-  # If you pass :manage it will apply to every action. Other common actions
-  # here are :read, :create, :update and :destroy.
-  #
-  # The second argument is the resource the user can perform the action on.
-  # If you pass :all it will apply to every resource. Otherwise pass a Ruby
-  # class of the resource.
-  #
-  # The third argument is an optional hash of conditions to further filter the
-  # objects.
-  # For example, here the user can only update published articles.
-  #
-  #   can :update, Article, published: true
-  #
-  # See the wiki for details:
-  # https://github.com/CanCanCommunity/cancancan/blob/develop/docs/define_check_abilities.md
 end

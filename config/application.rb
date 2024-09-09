@@ -8,7 +8,7 @@ Bundler.require(*Rails.groups)
 
 # Load environment variables from `.env` file
 if Rails.env.development? || Rails.env.test?
-  Dotenv::Railtie.load
+  Dotenv::Rails.load
 end
 
 module TheFineGem

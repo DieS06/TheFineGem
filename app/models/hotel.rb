@@ -6,7 +6,6 @@ class Hotel < ApplicationRecord
   has_many :reservations, through: :rooms, dependent: :destroy
   has_many :comments, through: :rooms, dependent: :destroy
   has_many_attached :images
-  paginates_per 2
 
   validates :name, presence: true,
   length: { minimum: 10, maximum: 100 }
@@ -33,4 +32,41 @@ class Hotel < ApplicationRecord
     self.rating = [ [ average_rate, 0 ].max, 5 ].min.round(2)
     save
   end
+
+  def add_room(room)
+    rooms_ids << room.id
+    save
+  end
+
+  def remove_room(room)
+    rooms_ids.delete(room.id)
+    save
+  end
+
+  # def assemble_hotel_information
+  #   hotel_info = {
+  #     user_id: user_id,
+  #     name: name,
+  #     phone: phone,
+  #     email: email,
+  #     description: description,
+  #     address_id: address_id,
+  #     rating: rating
+  #   }
+  #   hotel_info
+  # end
+
+  # def hotel_detail
+  #   "Hotel: #{name}\n" +
+  #   "Phone: #{phone}\n" +
+  #   "Email: #{email}\n" +
+  #   "Description: #{description}\n" +
+  #   "Rating: #{rating}\n" +
+  #   "\n" +
+  #   "Address:\n" +
+  #   "Street: #{address.street}\n" +
+  #   "City: #{address.city}\n" +
+  #   "State: #{address.state}\n" +
+  #   "Zip code: #{address.zip_code}\n"
+  # end
 end

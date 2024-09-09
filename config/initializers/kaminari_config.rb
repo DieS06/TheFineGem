@@ -12,6 +12,6 @@ Kaminari.configure do |config|
   # config.max_pages = nil
   # config.params_on_first_page = false
 
-  config.default_per_page = 2
-  config.max_per_page = 2
+  config.default_per_page = 25
+  config.max_per_page = 25
 end

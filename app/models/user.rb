@@ -13,9 +13,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :first_name, presence: true,
-  length: { minimum: 10, maximum: 70 }
+  length: { minimum: 1, maximum: 70 }
   validates :last_name, presence: true,
-  length: { minimum: 10, maximum: 70 }
+  length: { minimum: 1, maximum: 70 }
   validates :phone, presence: true,
   format: { with: /\A[+\d]?(?:[\d\-.\s]{7,}\z)/,
   message: "must be a valid phone number" }

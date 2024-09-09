@@ -1,18 +1,20 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_room, only: %i[ show ]
   load_and_authorize_resource
 
   def index
-    @users = User.all
-    authorize! :index, @users.role == 2
+    @users = User.page(params[:page]).per(15)
   end
 
   def show
     @user = User.find(params[:id])
-    authorize! :show, @user.role == 2
   end
 
   private
+  def set_user
+    @user = User.find(params[:id])
+  end
 
   def user_params
     params.require(:user).permit(:id, :first_name, :last_name,

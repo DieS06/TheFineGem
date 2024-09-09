@@ -1,0 +1,67 @@
+<table>
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>ID Number</th>
+            <th>Role</th>
+            <th>E-mail</th>
+            <th>Phone Number</th>
+            <th>Created At</th>
+            <th>Updated At</th>
+            <th colspan="2" >Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @users.each do |user| %>
+            <% unless user.role == 2 %>
+                <% if user != current_user %> <!-- Add this condition to check if the user is not the current user -->
+                    <tr>
+                        <td><%= user.full_name %></td>
+                        <td><%= user.id_number %></td>
+                        <td>
+                            <% if user.role == 1 %>
+                                Client
+                            <% elsif user.role == 2 %>
+                                Administrator
+                            <% end %>
+                        </td>
+                        <td><%= user.email %></td>
+                        <td><%= user.phone %></td>
+                        <td><%= user.created_at %></td>
+                        <td><%= user.updated_at %></td>
+                        <td class="td-update"> 
+                            <a class="update" 
+                            href="/rooms/<%= user.id %>/update">
+                                <i class="bi bi-pencil-fill"></i>
+                            </a> 
+                        </td>
+                        <td class="td-destroy"> 
+                            <a class="destroy" 
+                            href="/rooms/<%= user.id %>/destroy">
+                                <i class="bi bi-trash3-fill"></i>
+                            </a> 
+                        </td>
+                    </tr>
+                <% else %>
+                    <tr>
+                        <td><%= user.full_name %></td>
+                        <td><%= user.id_number %></td>
+                        <td>
+                            <% if user.role == 1 %>
+                                Client
+                            <% elsif user.role == 2 %>
+                                Administrator
+                            <% end %>
+                        </td>
+                        <td><%= user.email %></td>
+                        <td><%= user.phone %></td>
+                        <td><%= user.created_at %></td>
+                        <td><%= user.updated_at %></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                <% end %>
+            <% end %>
+        <% end %>
+    </tbody>
+</table>

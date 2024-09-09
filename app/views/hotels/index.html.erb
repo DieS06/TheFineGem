@@ -26,10 +26,27 @@
                                 <label>About :</label>
                                 <p class="card-text"><%= hotel.description %></p>
                             </div>
-                            <div class="container-rate">
-                                <label>Rate :</label>
-                                <p class="card-text"><%= hotel.rating %></p>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="container">
+                                        <label>Rate :</label>
+                                        <p class="card-text"><%= hotel.rating %></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="container">
+                                        <label>Rooms :</label>
+                                        <p class="card-text"><%= hotel.rooms.count %></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="container">
+                                        <label>Night Price :</label>
+                                        <p class="card-text"></p>
+                                    </div>
+                                </div>
                             </div>
+
                             <div class="row">
                                 <div class="col-md-6">
                                         <%= link_to 'Reserve', reserve_room_path("/"), class: 'btn' %>   
@@ -63,6 +80,5 @@
                 </div> 
             </div>
         <% end %>
-
     </div>
 </section>

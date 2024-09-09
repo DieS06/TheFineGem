@@ -1,44 +1,67 @@
-
-<%= form_with(model: @hotel, local: true) do |form| %>
-    <div class="field">
-        <%= form.label :name %>
-        <%= form.text_field :name %>
+<%= form_with(model: @hotels, local: true) do |form| %>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="field">
+                <%= form.label :name %>
+                <%= form.text_field :name %>
+            </div>
+            <div class="field">
+                <%= form.label :phone %>
+                <%= form.text_field :phone %>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="field">
+                <%= form.label :last_name %>
+                <%= form.text_field :last_name %>
+            </div>
+            <div class="field">
+                <%= form.label :email %>
+                <%= form.text_field :email %>
+            </div>
+        </div>
+    </div>
+    <div class="field-description">
+        <%= form.label :description %>
+        <%= form.text_area :description %>
     </div>
 
-    <%= render partial: 'address/form', locals: { form: form } %>
+        <%= render 'address/form', address: @hotel.address %>
 
-    <div class="field">
-        <%= form.label :city %>
-        <%= form.text_field :city %>
+    <div class="first-image-field" id="image-fields">
+        <div class="field">
+            <%= form.label :image %>
+            <%= form.file_field :image %>
+        </div>
     </div>
 
-    <div class="field">
-        <%= form.label :country %>
-        <%= form.text_field :country %>
+    <div class="add-btn">
+        <button type="button" onclick="addImageField()">
+            <i class="bi bi-plus-circle-fill"></i>
+        </button>
     </div>
-    <div class="field">
-        <%= form.label :image %>
-        <%= form.file_field :image %>
-    </div>
-
-    <div id="image-fields">
-        <!-- Add dynamic image fields here -->
-    </div>
-
-    <button type="button" onclick="addImageField()">Add Image</button>
-
     <script>
         function addImageField() {
             var imageFields = document.getElementById("image-fields");
-            var newImageField = document.createElement("div");
-            newImageField.innerHTML = `
-                <div class="field">
-                    <%= form.label :image %>
-                    <%= form.file_field :image %>
-                </div>
-            `;
-            
-            imageFields.appendChild(newImageField);
+            var imageFieldCount = imageFields.childElementCount;
+            if (imageFieldCount < 3) {
+                var newImageField = document.createElement("div");
+                newImageField.innerHTML = `
+                    <div class="field">
+                        <%= form.label :image %>
+                        <%= form.file_field :image %>
+                        <button type="button" onclick="deleteImageField(this)">
+                            <i class="bi bi-dash-circle-fill"></i>
+                        </button>
+                    </div>
+                `;
+                imageFields.appendChild(newImageField);
+            }
+        }
+
+        function deleteImageField(button) {
+            var imageField = button.parentNode;
+            imageField.parentNode.removeChild(imageField);
         }
     </script>
 
