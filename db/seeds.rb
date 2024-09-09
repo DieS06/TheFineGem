@@ -2,8 +2,8 @@ require 'faker'
 
 # ADMIN USER
 # Create a admin user
-# admin_email = "jsequeirag@ucenfotec.ac.cr"
-# admin_password = "Cenfotec123!"
+# admin_email = ENV['ADMINEMAIL']
+# admin_password = ENV['ADMINPASSWORD']
 # admin = User.find_or_initialize_by(email: admin_email)
 # admin.password = admin_password
 # admin.password_confirmation = admin_password
@@ -24,7 +24,7 @@ require 'faker'
 # CLIENT USERS
 20.times do
 client_email = Faker::Internet.email
-client_password = "Cenfotec123!"
+client_password = ENV['ADMINPASSWORD']
 
 client = User.find_or_initialize_by(email: client_email)
 client.password = client_password
