@@ -1,35 +1,75 @@
 class ReserveRoomController < ApplicationController
-  # Create a reservation
-  def make_reservation
+  def index
+    @reserve_rooms = ReserveRoom.page(params[:page]).per(5)
+  # rescue ActiveRecord::RecordNotFound
+  #   flash[:alert] = "No room reservations found."
+  #   redirect_to root_path
   end
 
-  # Email of confirmation
-  # Send email to user
-  def confirm_reservation
+  def show
+    @room = Room.find(params[:id])
+  # rescue ActiveRecord::RecordNotFound
+  #   flash[:alert] = "Room not found."
+  #   redirect_to reserve_room_index_path
   end
 
-  # Superadmin management of reservations
-  # Retrieve ALL
-  def list_reservations
+  def new
+    @room = Room.find(params[:room_id])
+    @reserve_room = ReserveRoom.new
+    redirect_to reserve_room_show_path
   end
 
-  # List all reservations, related to user
-  # Retrieve by user ID
-  def list_user_reservations
+  def edit
+    @room = Room.find(params[:room_id])
+    @reserve_room = ReserveRoom.find(params[:id])
+  # rescue ActiveRecord::RecordNotFound
+  #   flash[:alert] = "Room or reservation not found."
+  #   redirect_to reserve_room_index_path
   end
 
-  # List all reservations, related to hotel
-  # Retrieve by hotel ID
-  def list_hotel_reservations
+  def create
+    @room = Room.find(params[:room_id])
+    @reserve_room = ReserveRoom.new(reserve_room_params)
+    if @reserve_room.save
+      @room.add_reserve(@reserve_room)
+      redirect_to reserve_room_index_path
+    else
+      render 'new'
+    end
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "Room not found."
+    redirect_to reserve_room_index_path
   end
 
-  # Reservation details
-  # Retrieve Hotel, Room and Reservation by ID
-  def reservation_details
+  def update
+    @room = Room.find(params[:room_id])
+    @reserve_room = ReserveRoom.find(params[:id])
+    if @reserve_room.update(reserve_room_params)
+      redirect_to reserve_room_index_path
+    else
+      render 'edit'
+    end
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "Room or reservation not found."
+    redirect_to reserve_room_index_path
+  end
+  
+  def destroy
+    @room = Room.find(params[:room_id])
+    @reserve_room = ReserveRoom.find(params[:id])
+    @room.cancel_reserve
+    @reserve_room.destroy
+    redirect_to reserve_room_index_path
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "Room or reservation not found."
+    redirect_to reserve_room_index_path
   end
 
-  # Cancel a reservation
-  # Logical delete
-  def cancel_reservation
+  private
+
+  def reserve_room_params
+    params.require(:reserve_room).permit( :user_id, :room_id, 
+    :start_date, :end_date, :status, :description, :total_price, 
+    :payment_id, :created_at, :updated_at)
   end
 end

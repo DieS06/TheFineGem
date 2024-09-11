@@ -1,0 +1,15 @@
+<section class="update-user">
+  <div class="main-title">
+    <h2> Profile</h2>
+  </div>
+
+    <div class="form-container">
+        <% if flash[:alert] %>
+            <div class="alert alert-danger">
+                <%= flash[:alert] %>
+            </div>
+        <% end %>
+
+        <%= render 'form', user: @user %>
+    </div>
+</section>

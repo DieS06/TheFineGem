@@ -1,4 +1,4 @@
-<%= form_with(model: @hotels, local: true) do |form| %>
+<%= form_with(model: @hotel, local: true, html: { multipart: true }) do |form| %>
     <div class="row">
         <div class="col-md-6">
             <div class="field">
@@ -9,29 +9,28 @@
                 <%= form.label :phone %>
                 <%= form.text_field :phone %>
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="field">
-                <%= form.label :last_name %>
-                <%= form.text_field :last_name %>
-            </div>
             <div class="field">
                 <%= form.label :email %>
                 <%= form.text_field :email %>
             </div>
         </div>
+        <div class="col-md-6">
+        <div class="container-address">
+            <%= form.fields_for :address do |address_form| %>
+                <%= render 'address/form', form: address_form %>
+            <% end %>
+        </div>
     </div>
+</div>
     <div class="field-description">
         <%= form.label :description %>
         <%= form.text_area :description %>
     </div>
 
-        <%= render 'address/form', address: @hotel.address %>
-
     <div class="first-image-field" id="image-fields">
+        <%= form.label :images %>
         <div class="field">
-            <%= form.label :image %>
-            <%= form.file_field :image %>
+            <%= form.file_field :images, multiple: true, class: "img-select" %>
         </div>
     </div>
 
@@ -44,12 +43,11 @@
         function addImageField() {
             var imageFields = document.getElementById("image-fields");
             var imageFieldCount = imageFields.childElementCount;
-            if (imageFieldCount < 3) {
+            if (imageFieldCount < 4) {
                 var newImageField = document.createElement("div");
                 newImageField.innerHTML = `
                     <div class="field">
-                        <%= form.label :image %>
-                        <%= form.file_field :image %>
+                        <input type="file" name="hotel[images][]" class="img-select">
                         <button type="button" onclick="deleteImageField(this)">
                             <i class="bi bi-dash-circle-fill"></i>
                         </button>

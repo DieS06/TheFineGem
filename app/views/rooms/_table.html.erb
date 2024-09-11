@@ -14,29 +14,26 @@
         </tr>
     </thead>
     <tbody>
-        <% @rooms.each do |room| %>
-            <tr>
-                <td><%= room.hotel.name %></td>
-                <td><%= room.code %></td>
-                <td><%= room.room_type %> <%= room.id %> </td>                               
-                <td><%= room.capacity %></td>
-                <td><%= room.beds %></td>
-                <td><%= room.price_per_night %></td>
-                <td><%= room.status %></td>
-                <td> </td>
-                <td> </td>
-                <td class="td-update"> 
-                     <a class="update" 
-                     href="/rooms/<%= room.id %>/update">
-                        <i class="bi bi-pencil-fill"></i>
-                    </a> 
-                </td>
-                <td class="td-destroy"> 
-                    <a class="destroy" 
-                    href="/rooms/<%= room.id %>/destroy">
-                        <i class="bi bi-trash3-fill"></i>
-                    </a> 
-                </td>
+        <% @rooms.sort_by { |room| room.hotel.name }.each do |room| %>
+            <td><%= room.hotel.name %></td>
+            <td><%= room.code %></td>
+            <td><%= room.room_type.capitalize %></td>
+            <td><%= room.capacity %></td>
+            <td><%= room.beds %></td>
+            <td><%= room.price_per_night %></td>
+            <td><%= room.status ? 'Booked' : 'Available' %></td>
+            <td> </td>
+            <td> </td>
+            <td class="td-update"> 
+                <%= link_to edit_room_path(room), class: 'update' do %>
+                    <i class="bi bi-pencil-fill"></i>
+                <% end %>
+            </td>
+            <td class="td-destroy"> 
+                <%= link_to room_path(room), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"},  class: 'destroy' do%>
+                    <i class="bi bi-trash3-fill"></i>
+                <% end %>
+            </td>
             </tr>
         <% end %>
     </tbody>

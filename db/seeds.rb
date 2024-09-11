@@ -22,27 +22,27 @@ require 'faker'
 # puts "Role: #{admin.role}"
 
 # CLIENT USERS
-20.times do
-client_email = Faker::Internet.email
-client_password = ENV['ADMINPASSWORD']
+# 20.times do
+# client_email = Faker::Internet.email
+# client_password = ENV['ADMINPASSWORD']
 
-client = User.find_or_initialize_by(email: client_email)
-client.password = client_password
-client.password_confirmation = client_password
-client.role = 1
-client.first_name = Faker::Name.first_name
-client.last_name = Faker::Name.last_name
-client.phone = Faker::PhoneNumber.cell_phone_in_e164
-client.id_number = Faker::IdNumber.valid
-client.save!
-puts "Client user created succesfully! \n" +
-     "\n Admin user details: \n"
-puts "Name: #{client.full_name}"
-puts "Email: #{client.email}" + ", " + "Phone: #{client.phone}"
-puts "Password: #{client.password}"
-puts "ID Number: #{client.id_number}"
-puts "Role: #{client.role}"
-end
+# client = User.find_or_initialize_by(email: client_email)
+# client.password = client_password
+# client.password_confirmation = client_password
+# client.role = 1
+# client.first_name = Faker::Name.first_name
+# client.last_name = Faker::Name.last_name
+# client.phone = Faker::PhoneNumber.cell_phone_in_e164
+# client.id_number = Faker::IdNumber.valid
+# client.save!
+# puts "Client user created succesfully! \n" +
+#      "\n Admin user details: \n"
+# puts "Name: #{client.full_name}"
+# puts "Email: #{client.email}" + ", " + "Phone: #{client.phone}"
+# puts "Password: #{client.password}"
+# puts "ID Number: #{client.id_number}"
+# puts "Role: #{client.role}"
+# end
 
 # HOTELS
 # Create a hotel using Faker
@@ -82,25 +82,49 @@ end
 
 # ROOMS
 # Create rooms and add them to existing hotels
-# 30.times do
-#   hotel = Hotel.order("RANDOM()").first
-#   room = Room.create!(
-#     room_type: [ "economic", "premium", "luxury" ].sample,
-#     status: rand(0..1),
-#     hotel_id: hotel.id,
-#     capacity: rand(0..10),
-#     beds: rand(0..16),
-#     price_per_night: Faker::Commerce.price(range: 50..500),
-#     reserve_ids: []
-#   )
-#   hotel.rooms_ids << room.id
-#   hotel.save!
-#   puts "Room created successfully!"
-#   puts "Type: #{room.room_type}"
-#   puts "Code: #{room.code}"
-#   puts "Status: #{room.status}"
-#   puts "Hotel: #{hotel.name}"
-#   puts "Beds: #{room.beds}"
-#   puts "Capacity: #{room.capacity}"
-#   puts "Price per Night: #{room.price_per_night}"
-# end
+50.times do
+  hotel = Hotel.order("RANDOM()").first
+
+  room_type = ["economic", "premium", "luxury"].sample
+  number_of_rooms = hotel.rooms.where(room_type: room_type).maximum(:number_of_rooms).to_i + 1
+
+  price_range = case room_type
+          when "economic"
+          50.0..200.0
+          when "premium"
+          200.0..500.0
+          when "luxury"
+          500.0..1000.0
+          else
+          50.0..1000.0
+          end
+
+  room = Room.new(
+    room_type: room_type,
+    status: "available",
+    hotel_id: hotel.id,
+    capacity: rand(2..12),
+    beds: rand(1..6),
+    price_per_night: Faker::Commerce.price(range: price_range),
+    number_of_rooms: number_of_rooms
+  )
+
+  puts "Attempting to create room with attributes: #{room.attributes}"
+
+  if room.save
+    puts "Room created successfully!"
+    puts "Type: #{room.room_type}"
+    puts "Code: #{room.code}"
+    puts "Room Number: #{room.number_of_rooms}"
+    puts "Status: #{room.status}"
+    puts "Hotel: #{hotel.name}"
+    puts "Beds: #{room.beds}"
+    puts "Capacity: #{room.capacity}"
+    puts "Price per Night: #{room.price_per_night}"
+  else
+    puts "Failed to create room: #{room.errors.full_messages.join(", ")}"
+    room.errors.each do |attribute, message|
+      puts "Validation error on #{attribute}: #{message}"
+    end
+  end
+end

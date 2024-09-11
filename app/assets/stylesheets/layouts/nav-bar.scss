@@ -111,6 +111,10 @@ ul{
     padding-left: 1rem;
     padding-right: 1rem;
     background-color: $neutro-primary;
+
+    .dropdown-item{
+        text-align: center;
+    }
     
     span{
         width: 100%;

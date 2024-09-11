@@ -213,3 +213,23 @@ tr:nth-child(even) {
 tr:hover {
     background-color: $neutro-secondary;
 }
+
+.alert-danger{
+    text-align: center;
+    background-color: rgba(red, 1);
+    color: $white;
+    border: none;
+    padding: 0.7rem;
+    margin-bottom: 1.5rem;
+    width: 80%;
+}
+
+.alert-success{
+    text-align: center;
+    background-color: rgba(green, 1);
+    color: $white;
+    border: none;
+    padding: 0.7rem;
+    margin-bottom: 1.5rem;
+    width: 80%;
+}

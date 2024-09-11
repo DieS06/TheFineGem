@@ -23,17 +23,9 @@
                         </li>
                     <% else%>
                         <li class="dropdown">
-                            <a class="link-nav dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="link-nav" href="/users"  aria-expanded="false">
                                 Users
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>
-                                    <a class="dropdown-item" href="/users">List Users</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="/users/sign_up">Create User</a>
-                                </li>
-                            </ul>
                         </li> 
                         <li class="dropdown">
                             <a class="link-nav dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -41,16 +33,9 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li>
-                                    <a class="dropdown-item" href="/hotels">Catalog</a>
-                                </li>
+                                    <%= link_to 'Catalog', hotels_path, class: 'dropdown-item' %>    </li>
                                 <li>
-                                    <a class="dropdown-item" href="/rooms">List Hotel</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="/hotels/new">Create Hotel</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="/rooms/new">Create Room</a>
+                                    <%= link_to 'My Hotels', rooms_path, class: 'dropdown-item' %>    
                                 </li>
                             </ul>
                         </li> 
@@ -60,7 +45,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li>
-                                    <a class="dropdown-item" href="/reservations/new">Add</a>
+                                    <a class="dropdown-item" href="/reservations/new">My Reservations</a>
                                 </li>
                             </ul>
                         </li> 

@@ -2,13 +2,14 @@
   <div class="main-title">
     <h2>Create Hotel</h2>
   </div>
+  
   <div class="form-container">
-        <% if can? :create, @hotel %>
-            <%= render 'form', hotel: @hotel %>
-        <% else %> 
-            <h1>Unauthorized</h1>
-            <p>You are not authorized to create a hotel</p>
-            <%= link_to 'Back', hotels_path %>
-        <% end %>
-    </div>
+    <% if flash[:alert] %>
+      <div class="alert alert-danger">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
+    <%= render 'form', hotel: @hotel %>
+  </div>
 </section>

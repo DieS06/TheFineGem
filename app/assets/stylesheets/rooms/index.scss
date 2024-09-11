@@ -2,6 +2,7 @@
 
 .sec-list-rooms{
     width: 90%;
+    margin-top: 2.3rem;
 }
 
 .sec-list-rooms .main-title h2{
@@ -78,18 +79,18 @@
     }
 }
 
-.td-update{
+.sec-list-rooms .td-update{
     padding-right: 0;
     .update{
 
         &:hover{
             color: $neutro-primary;
-            background:rgb(56, 89, 224);
+            background:green;
         }
     }
 }
 
-.td-destroy{
+.sec-list-rooms .td-destroy{
     padding-left: 0;
     .destroy{
     
@@ -97,5 +98,13 @@
             color: $neutro-primary;
             background:red;
         }
+    }
+}
+
+.sec-list-rooms .actions a{
+    transition: transform 0.3s;
+    width: 90%;
+    &:hover{
+        transform: scale(1.1);
     }
 }

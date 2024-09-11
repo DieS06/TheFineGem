@@ -11,8 +11,7 @@ Rails.application.routes.draw do
   confirmations: "users/confirmations",
   unlocks: "users/unlocks"
   }
-  resources :users, only: [ :index, :show ]
-
+  
   authenticated :user do
     root to: "hotels#index", as: :authenticated_root
   end
@@ -23,12 +22,14 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :users, only: [ :index, :show, :destroy, :edit, :update ]
   resources :hotels do
-    resources :addresses
+    resources :addresses, only: [:index, :show, :new, :create, :edit, :update, :destroy]  
   end
-  resources :rooms
-  resources :comments
-  resources :reserve_rooms do
-    resources :payments
+  resources :rooms, only: [:index, :show, :new, :create, :edit, :update, :destroy]  do
+    resources :comments
+  end
+    resources :reserve_rooms, only: [:index, :show, :new, :create, :edit, :destroy]  do
+      resources :payments, only: [:index, :show, :new, :create, :edit ]
   end
 end
