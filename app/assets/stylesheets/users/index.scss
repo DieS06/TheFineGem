@@ -34,34 +34,61 @@
                         color: $light-secondary;
                     }
                 }
-                
+
+                .first{
+                    a{
+                        color: $white;
+                        &:hover{
+                            color: $light-primary;
+                        }
+                    }
+                }
+                .prev{
+                    a{
+                        color: $white;
+                        &:hover{
+                            color: $light-primary;
+                        }
+                    }
+                }
+                .next{
+                    a{
+                        color: $white;
+                        &:hover{
+                            color: $light-primary;
+                        }
+                    }
+                }
+                .last{
+                    a{
+                        color: $white;
+                        &:hover{
+                            color: $light-primary;
+                        }
+                    }
+                }
+
                 .current{
-                    color: $light-primary;
+                    color: $white;
 
                     &:hover{
-                        color: $light-secondary;
+                        color: $white;
                     }
                 }
 
                 a{
-                    color: $white;
+                    color: $light-primary;
                     text-decoration: none;
         
                     &:hover{
-                        color: $light-secondary;
+                        color: $white;
                     }
                 }
         }
 }
 
 .sec-list-users table{
-    margin-top: 2.5rem;
-
-    th{
-        background: $table-header-gradient;
-        color: $white;
-        text-align: center;
-    }
+    margin-top: 2.5rem;  
 
     td{
         text-align: center;
@@ -84,7 +111,7 @@
 
         &:hover{
             color: $neutro-primary;
-            background:rgb(56, 89, 224);
+            background:green;
         }
     }
 }

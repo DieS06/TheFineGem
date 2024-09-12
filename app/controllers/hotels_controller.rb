@@ -1,5 +1,5 @@
 class HotelsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [ :index ]
   before_action :set_hotel, only: %i[show edit update destroy]
   load_and_authorize_resource
 
@@ -14,6 +14,8 @@ class HotelsController < ApplicationController
 
   # GET /hotels/1 or /hotels/1.json
   def show
+    @hotel = Hotel.find(params[:hotel_id])
+    @rooms = @hotel.rooms.availabl
   rescue ActiveRecord::RecordNotFound
     flash[:alert] = "Hotel not found."
     redirect_to hotels_path
@@ -31,13 +33,12 @@ class HotelsController < ApplicationController
 
   # POST
   def create
-    Rails.logger.debug "Hotel Params: #{hotel_params.inspect}"
     @hotel = Hotel.new(hotel_params)
     @hotel.user = current_user
     if @hotel.save
-      redirect_to @hotel, notice: 'Hotel was successfully created.'
+      redirect_to @hotel, notice: "Hotel was successfully created."
     else
-      Rails.logger.debug "Hotel Save Errors: #{@hotel.errors.full_messages.to_sentence}"
+      flash.now[:alert] = @hotel.errors.full_messages.to_sentence
       render :new
     end
   end
@@ -45,7 +46,7 @@ class HotelsController < ApplicationController
   # PUT
   def update
     if @hotel.update(hotel_params)
-      redirect_to @hotel, notice: 'Hotel was successfully updated.'
+      redirect_to @hotel, notice: "Hotel was successfully updated."
     else
       Rails.logger.debug @hotel.errors.full_messages.to_sentence
       flash[:alert] = "Update failed. Please check the form for errors and try again."
@@ -63,28 +64,28 @@ private
 
   def set_hotel
     @hotel = Hotel.find(params[:id])
-    @address = Address.find(params[:id])
+    @address = @hotel.address
   end
 
   def hotel_params
     params.require(:hotel).permit(
-      :name, 
+      :name,
       :phone,
-      :email, 
-      :description, 
-      :user_id, 
+      :email,
+      :description,
+      :user_id,
       :address_id,
-      :created_at, 
-      :updated_at, 
+      :created_at,
+      :updated_at,
       { room_ids: [] },
-      :rating, 
+      :rating,
       { images: [] },
-      address_attributes: [:country, :city, :place_name]
+      address_attributes: [ :country, :city, :place_name ]
     )
   end
 
   def address_params
-    params.require(:address).permit( :city, 
+    params.require(:address).permit(:city,
     :place_name, :country)
   end
 end

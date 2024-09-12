@@ -1,0 +1,40 @@
+<%= form_with(model: [@reserve_room, @payment], local: true) do |form| %>
+    <div class="field">
+        <%= form.label :room_number %>
+        <%= form.text_field :room_number %>
+    </div>
+
+    <div class="field">
+        <%= form.label :check_in_date %>
+        <%= form.date_select :check_in_date %>
+    </div>
+
+    <div class="field">
+        <%= form.label :check_out_date %>
+        <%= form.date_select :check_out_date %>
+    </div>
+
+    <div class="field">
+        <%= form.label :guest_name %>
+        <%= form.text_field :guest_name, value: current_user.name %>
+    </div>
+
+    <div class="field">
+        <%= form.label :guest_email %>
+        <%= form.email_field :guest_email, value: current_user.email %>
+    </div>
+
+    <div class="field">
+        <%= form.label :payment_method %>
+        <%= form.select :payment_method, options_for_select(['Credit Card', 'Debit Card', 'PayPal']) %>
+    </div>
+
+    <div class="field">
+        <%= form.label :amount %>
+        <%= form.number_field :amount, value: total_price_cal(@reserve_room.room.price_per_night), readonly: true %>
+    </div>
+
+    <div class="actions">
+        <%= form.submit %>
+    </div>
+<% end %>

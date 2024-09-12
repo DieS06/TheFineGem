@@ -1,0 +1,38 @@
+@import "_variables";
+
+.update-user {
+    width: 100%;
+    .main-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+   
+        h2 {
+            font-size: 4.3rem;
+            margin-bottom: 1rem;
+            width: 100%;
+
+            &:before,
+            &:after {
+                width: 44%;
+            }
+
+            &:before{
+                left: -30px
+            }
+
+            &:after{
+               right: -30px
+            }
+        }
+    }
+
+    .form-container form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60%;
+        margin: 0 auto;
+    }
+}
+

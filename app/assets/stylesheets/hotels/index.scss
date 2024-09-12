@@ -156,21 +156,53 @@
                         color: $light-secondary;
                     }
                 }
+
+                .first{
+                    a{
+                        color: $white;
+                        &:hover{
+                            color: $light-primary;
+                        }
+                    }
+                }
+                .prev{
+                    a{
+                        color: $white;
+                        &:hover{
+                            color: $light-primary;
+                        }
+                    }
+                }
+                .next{
+                    a{
+                        color: $white;
+                        &:hover{
+                            color: $light-primary;
+                        }
+                    }
+                }
+                .last{
+                    a{
+                        color: $white;
+                        &:hover{
+                            color: $light-primary;
+                        }
+                    }
+                }
                 
                 .current{
-                    color: $light-primary;
-
+                    color: $white;
                     &:hover{
-                        color: $light-secondary;
+                        color: $white;
                     }
                 }
 
                 a{
-                    color: $white;
+                    color: $light-primary;
                     text-decoration: none;
         
                     &:hover{
-                        color: $light-secondary;
+                        color: $white;
                     }
                 }
         }

@@ -1,12 +1,39 @@
 @import "_variables";
 
-.sec-sign-up {
+
+.sec-update-user .main-title h2{
     margin-top: 1rem;
+    width: 100%;
+
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        top: 55%;
+        transform: translateY(-50%);
+        width: 40%;
+        background-color: rgba($light-primary, 0.3);
+        margin: 0 20px;
+        
+    }
+
+    &:before {
+        left: -30px; 
+        height: 100%;
+        border-radius: none;
+    }
+
+    &:after {
+        right: -30px; 
+        height: 100%;
+        border-radius: none;
+    }
 }
 
-.sec-sign-up .form-container form{
+.sec-update-user .form-container form{
     padding: 1rem;
     justify-content: center;
+    margin-top: 2rem;
 
     &.before {
         left: -10px;
@@ -52,3 +79,24 @@
     color: $white;
     padding-left: 1rem;
 }
+
+.sec-update-user{
+    .cancel-btn{
+        display: flex;
+        justify-content: center;
+        margin-top: 0.3rem;
+        margin-bottom: 0.3rem;
+        button{
+            background-color: $light-primary;
+            color: $white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            &:hover{
+                background-color: $middle-primary;
+            }
+        }
+    } 
+} 

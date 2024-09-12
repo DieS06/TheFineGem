@@ -1,0 +1,58 @@
+@import "_variables";
+
+.sec-edit-rooms{
+    width: 100%;
+    .main-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+   
+        h2 {
+            font-size: 4.3rem;
+            margin-bottom: 1rem;
+            width: 100%;
+
+            &:before,
+            &:after {
+                width: 38%;
+            }
+
+            &:before{
+                left: -30px
+            }
+
+            &:after{
+               right: -30px
+            }
+        }
+    }
+
+    .form-container form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60%;
+        margin: 0 auto;
+
+        .row{
+            .field{
+                input{
+                    color: $white;
+                    padding-left: 0.5rem;
+                }
+
+                select{
+                    color: $white;
+                    background-color: rgba($light-secondary, 0.5);
+                    border: none;
+                    padding-left: 0.5rem;
+                    padding: 0.2rem;
+                }
+            }
+        }
+
+        #image-fields{
+            width: 100%;
+        }
+    }
+}

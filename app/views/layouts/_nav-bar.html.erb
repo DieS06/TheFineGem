@@ -12,14 +12,9 @@
                 <% if user_signed_in? %>
                     <% if current_user.client?%>
                         <li class="dropdown">
-                            <a class="link-nav dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Hotels
+                            <a class="link-nav" href="/hotels" aria-expanded="false">
+                                Hotels Catalog
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>
-                                    <a class="dropdown-item" href="/hotels">Catalog</a>
-                                </li>
-                            </ul>
                         </li>
                     <% else%>
                         <li class="dropdown">
@@ -45,15 +40,16 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li>
-                                    <a class="dropdown-item" href="/reservations/new">My Reservations</a>
+                                    <%= link_to 'My Reservations', reserve_rooms_path, class: 'dropdown-item' %>
                                 </li>
+                                <li>
+                                    <%= link_to 'New Reservation', new_reserve_room_path, class: 'dropdown-item' %>
+                                </li> 
                             </ul>
                         </li> 
                     <% end %>
                 <% else %>
-                    <li class="catalog">
-                        <a class="link-catalog" href="/hotels">Hotels</a>
-                    </li>  
+
                 <% end %>  
             </ul> 
         </div>
@@ -75,11 +71,18 @@
             </div>
             <% else %>
                 <div class="btn-container">
-                    <% if (current_page?(new_session_path(resource_name)) || current_page?('/')) %>
+                    <% if request.path == new_session_path(resource_name) %>
                         <div class="btn-sign-up">
                             <%= link_to 'Sign Up', new_registration_path(resource_name), class: 'btn' %>
                         </div>
-                    <%else%>
+                    <% elsif request.path == new_registration_path(resource_name) || request.path == user_registration_path %>
+                        <div class="btn-sign-in">
+                            <%= link_to 'Sign In', new_session_path(resource_name), class: 'btn' %>
+                        </div>    
+                    <% else %>
+                        <div class="btn-sign-up">
+                            <%= link_to 'Sign Up', new_registration_path(resource_name), class: 'btn' %>
+                        </div> 
                         <div class="btn-sign-in">
                             <%= link_to 'Sign In', new_session_path(resource_name), class: 'btn' %>
                         </div>

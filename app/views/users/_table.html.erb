@@ -1,7 +1,7 @@
 <table>
     <thead>
         <tr>
-            <th>Full Name</th>
+            <th >Full Name</th>
             <th>ID Number</th>
             <th>Role</th>
             <th>E-mail</th>
@@ -31,7 +31,7 @@
                             <% end %>
                         </td>
                         <td class="td-destroy"> 
-                            <%= link_to user_path(user), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} do%>
+                            <%= link_to user_path(user), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'destroy' do%>
                                 <i class="bi bi-trash3-fill"></i>
                             <% end %>
                         </td>

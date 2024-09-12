@@ -1,0 +1,59 @@
+    <div class="reservation-instructions">
+      <h3 class="sel-title">Select a room and then click the "Reserve Now" button</h3>
+      <%= form_with url: new_reserve_room_payment_path, method: :post, local: true do |form| %>
+        <%= form.hidden_field :hotel_id, value: @hotel.id %>
+        <%= form.hidden_field :user_id, value: current_user.id %> <!-- Assuming you have a current_user method -->
+
+        <div class="container-rooms">
+          <div class="row">
+            <% { 'economic' => @economic_rooms, 'premium' => @premium_rooms, 'luxury' => @luxury_rooms }.each do |room_type, rooms| %>
+              <% if @hotel.rooms.any? { |room| room.room_type == room_type } %>
+                <div class="col">
+                  <div class="title-col">
+                    <h2><%= room_type.capitalize %></h2>
+                  </div>
+                  <% @hotel.rooms.each do |room| %>
+                    <% if room.room_type == room_type %>
+                      <div class="card mb-3">
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <h3 class="card-title"><%= room.code %></h3>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="field">
+                                <strong>Price:</strong>
+                                <p class="card-text"><%= room.price_per_night %></p>
+                              </div>
+                              <div class="field">
+                                <strong>Capacity:</strong>
+                                <p class="card-text"><%= room.capacity %></p>
+                              </div>
+                              <div class="field">
+                                <strong>Beds:</strong>
+                                <p class="card-text"><%= room.beds %></p>
+                              </div>
+                            </div>
+                            <div class="col-md-6 check">
+                              <div class="form-check">
+                                <%= form.radio_button :room_id, room.id, class: 'form-check-input', id: "room_#{room.id}" %>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="actions">
+          <%= form.submit 'Reserve Now', class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+
+ 

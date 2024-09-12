@@ -1,3 +1,49 @@
-<section class="sec-rooms-show">
-<p> Its Working or something...Rooms Show</p>
+<section class="sec-select-room">
+    <div class="main-title">
+        <h2><%= @hotel.name %></h2>
+    </div>
+    <div class="hotel-details">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="field">
+                    <strong>Phone:</strong>
+                    <p><%= @hotel.phone %></p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="field">
+                    <strong>Address:</strong> 
+                    <p><%= @hotel.address.compound_address %></p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="field">
+                    <strong>Email:</strong>
+                    <p><%= @hotel.email %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <hr class="divider">
+    </div>
+
+    <div class="form-container">   
+        <%= form_with url: reservation_path, method: :post do |f| %>
+        <% @rooms.each do |room| %>
+            <div class="room">
+            <h3><%= room.code %> - <%= room.room_type %></h3>
+            <p>Capacity: <%= room.capacity %></p>
+            <p>Price per night: <%= room.price_per_night %></p>
+            <%= f.radio_button :room_id, room.id %>
+            </div>
+        <% end %>
+        <%= f.submit "Select Room" %>
+        <% end %>
+    </div>
+
+    <div class="row">
+        <hr class="divider">
+    </div>
 </section>

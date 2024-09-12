@@ -1,4 +1,15 @@
 <%= form_with(model: @hotel, local: true, html: { multipart: true }) do |form| %>
+    <% if @hotel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hotel.errors.count, "error") %> prohibited this hotel from being saved:</h2>
+      <ul>
+        <% @hotel.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
     <div class="row">
         <div class="col-md-6">
             <div class="field">
@@ -39,29 +50,31 @@
             <i class="bi bi-plus-circle-fill"></i>
         </button>
     </div>
-    <script>
-        function addImageField() {
-            var imageFields = document.getElementById("image-fields");
-            var imageFieldCount = imageFields.childElementCount;
-            if (imageFieldCount < 4) {
-                var newImageField = document.createElement("div");
-                newImageField.innerHTML = `
-                    <div class="field">
-                        <input type="file" name="hotel[images][]" class="img-select">
-                        <button type="button" onclick="deleteImageField(this)">
-                            <i class="bi bi-dash-circle-fill"></i>
-                        </button>
-                    </div>
-                `;
-                imageFields.appendChild(newImageField);
+        <script>
+            function addImageField() {
+                var imageFields = document.getElementById("image-fields");
+                var imageFieldCount = imageFields.childElementCount;
+                if (imageFieldCount < 4) {
+                    var newImageField = document.createElement("div");
+                    newImageField.innerHTML = `
+                        <div class="field">
+                            <input type="file" name="hotel[images][]" class="img-select">
+                            <button type="button" onclick="deleteImageField(this)">
+                                <i class="bi bi-dash-circle-fill"></i>
+                            </button>
+                        </div>
+                    `;
+                    imageFields.appendChild(newImageField);
+                } else {
+                    alert("You can only upload a maximum of 3 images.");
+                }
             }
-        }
 
-        function deleteImageField(button) {
-            var imageField = button.parentNode;
-            imageField.parentNode.removeChild(imageField);
-        }
-    </script>
+            function deleteImageField(button) {
+                var imageField = button.parentNode;
+                imageField.parentNode.removeChild(imageField);
+            }
+        </script>
 
     <div class="actions">
         <%= form.submit %>

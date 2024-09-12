@@ -21,9 +21,19 @@
   </head>
 
   <body>
-    <%= render 'layouts/nav-bar' %>
+    <header>
+       <%= render 'layouts/nav-bar' %>
+    </header>
+   
+    <div class="flash-messages">
+      <% if flash[:alert] %>
+        <div class="alert alert-danger">
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
+    </div>
+
     <%= yield %>
-    <%= render 'layouts/footer' %>
   </body>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">

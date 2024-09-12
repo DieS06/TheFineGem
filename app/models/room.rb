@@ -2,8 +2,8 @@ class Room < ApplicationRecord
   belongs_to :hotel
   has_many :reserve_rooms
   before_save :set_code
-  before_save :set_number_of_room
-  before_save :some_callback_method
+  before_validation :set_number_of_room, on: :create
+  before_save :status_check
 
   enum status: { available: 0, booked: 1 }
   enum room_type: { economic: 0, premium: 1, luxury: 2 }
@@ -15,37 +15,41 @@ class Room < ApplicationRecord
   validates :beds, presence: true
   validates :capacity, presence: true
   validates :price_per_night, presence: true
-  validates :number_of_rooms, presence: true, numericality: { only_integer: true, greater_than: 0 }
-  
+  validates :number_of_rooms, numericality: { only_integer: true, greater_than: 0 }
+
   def calculate_price(start_date, end_date)
     total_days = (end_date - start_date).to_i
     total_price = total_days * price_per_night
     total_price
   end
 
-  def some_callback_method
+  def status_check
     self.status = "available" if status.nil?
   end
 
   def code_creation
     type_abbr = case room_type
-                when "economic"
+    when "economic"
                     "ECO"
-                when "premium"
+    when "premium"
                     "PRE"
-                when "luxury"
+    when "luxury"
                     "LUX"
-                end
+    end
     "#{type_abbr}-#{number_of_rooms}"
   end
 
   def set_number_of_room
+    if new_record?
+      self.number_of_rooms = hotel.rooms.count + 1
+    else
     hotel.rooms.each_with_index do |room, index|
-      room.number_of_rooms = index
-      room.code = room.code_creation
+      Rails.logger.debug "Setting number_of_rooms for Room ID #{room.id} to #{index + 1}"
+      room.update(number_of_rooms: index + 1, code: room.code_creation)
+      end
     end
   end
-  
+
   private
 
   def available?

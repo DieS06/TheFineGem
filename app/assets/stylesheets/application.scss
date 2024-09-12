@@ -24,6 +24,7 @@
  @import "devise/sign-up";
  @import "hotels/index";
  @import "_variables";
+ @import "simple_calendar";
 
 body {
     font-family: 'Roboto Flex', sans-serif;
@@ -194,6 +195,19 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 1rem;
+    
+    tbody {
+        tr {
+            background: $neutro-primary;
+
+            tr:nth-child(even) {
+                background-color: $neutro-primary;
+                &:hover {
+                    background: rgba($light-primary, 0.5);
+                }
+            }
+        }
+    }
 }
 
 th, td {
@@ -204,15 +218,12 @@ th, td {
 
 th {
     font-weight: bold;
+    background: $table-header-gradient;
+    color: $white;
+    text-align: center;
 }
 
-tr:nth-child(even) {
-    background-color: $neutro-primary;
-}
 
-tr:hover {
-    background-color: $neutro-secondary;
-}
 
 .alert-danger{
     text-align: center;

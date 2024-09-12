@@ -77,11 +77,10 @@
     }
 }
 
-
-
 #image-fields{
     width: 100%;
     margin-bottom: 1rem;
+
 
     label{
         display: flex;
@@ -92,6 +91,7 @@
         font-size: 1.2rem;
         font-weight: 600;
         color: $white;
+        padding-left: 1rem;
     }
 
     .field{
@@ -102,9 +102,12 @@
         width: 100%;
         margin-bottom: 0.6rem;
 
-        input #image{
-            width: 100%;
-           
+        .img-select{
+            width: 96.5%;
+
+            &::placeholder{
+                padding-left: 0.5rem;
+            }
         }
     }
 }

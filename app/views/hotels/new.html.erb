@@ -2,14 +2,8 @@
   <div class="main-title">
     <h2>Create Hotel</h2>
   </div>
-  
-  <div class="form-container">
-    <% if flash[:alert] %>
-      <div class="alert alert-danger">
-        <%= flash[:alert] %>
-      </div>
-    <% end %>
 
+  <div class="form-container">
     <%= render 'form', hotel: @hotel %>
   </div>
 </section>

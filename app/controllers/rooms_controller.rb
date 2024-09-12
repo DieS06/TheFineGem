@@ -2,7 +2,7 @@ class RoomsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_room, only: %i[ show edit update destroy ]
   before_action :set_user, only: %i[ new edit create update ]
-  before_action :authorize_admin, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authorize_admin, only: [ :new, :create, :edit, :update, :destroy ]
   load_and_authorize_resource
 
   # GET /rooms
@@ -15,7 +15,6 @@ class RoomsController < ApplicationController
 
   # GET /rooms/1
   def show
-    @room = Room.find(params[:id])
   rescue ActiveRecord::RecordNotFound
       flash[:alert] = "Room not found."
       redirect_to rooms_path
@@ -29,14 +28,16 @@ class RoomsController < ApplicationController
   # GET /rooms/1/edit
   def edit
   end
-  
+
   # POST
   def create
     @room = Room.new(room_params)
-    @room.status = :available
     if @room.save
+      Rails.logger.debug "Before setting number_of_rooms: #{@room.number_of_rooms}"
+      @room.set_number_of_room
+      @room.hotel.rooms.each(&:save)
       flash[:notice] = "Room was successfully created."
-      redirect_to rooms_path
+      redirect_to @room
     else
       Rails.logger.debug @room.errors.full_messages.to_sentence
       flash[:alert] = "Creation failed. Please check the form for errors and try again."
@@ -49,7 +50,6 @@ class RoomsController < ApplicationController
     if @room.update(room_params)
       redirect_to rooms_path, notice: "Room was successfully updated."
     else
-      Rails.logger.debug @room.errors.full_messages.to_sentence
       flash[:alert] = "Update failed. Please check the form for errors and try again."
       render :edit
     end
@@ -73,22 +73,18 @@ class RoomsController < ApplicationController
 
   def room_params
     params.require(:room).permit(
-    :hotel_id, 
-    :room_type, 
-    :beds, 
+    :hotel_id,
+    :room_type,
+    :beds,
     :price_per_night,
-    :capacity, 
-    :status, 
-    :code, 
-    { image: [] }, 
-    :created_at, 
-    :updated_at, 
-    { reserve_ids: [] },
-    :number_of_rooms
-  )
-end
+    :capacity,
+    :status,
+    :created_at,
+    :updated_at,
+    { reserve_ids: [] })
+  end
 
   def authorize_admin
-    redirect_to(root_path, alert: 'Access denied.') unless current_user.admin?
+    redirect_to(root_path, alert: "Access denied.") unless current_user.admin?
   end
 end

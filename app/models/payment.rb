@@ -2,11 +2,11 @@ class Payment < ApplicationRecord
   belongs_to :user
   belongs_to :reserve_room
 
-  enum payment_method: { credit_card: "credit_card" }
+  enum payment_method: { credit_card: 0, paypal: 1, bank_transfer: 2 }
   enum status: { pending: "pending", completed: "completed",
   failed: "failed" }
 
-  validates :total_amount, presence: true
+  validates :total_amount, presence: true,  numericality: { greater_than: 0 }
   validates :payment_method, presence: true
   validates :status, presence: true
   validates :payment_date, presence: true
@@ -24,19 +24,5 @@ class Payment < ApplicationRecord
 
   def set_payment_date
     self.payment_date = Time.now.strftime("%Y-%m-%d %H:%M:%S")
-  end
-
-  def assemble_invoice_information
-    invoice_info = {
-      user_name: user.name,
-      user_email: user.email,
-      transaction_id: transaction_id,
-      payment_date: payment_date,
-      payment_id: id,
-      room_number: reserve_room.room.number,
-      payment_method: payment_method,
-      total_amount: total_amount
-    }
-    invoice_info
   end
 end

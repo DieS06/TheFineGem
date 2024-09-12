@@ -1,4 +1,9 @@
-<div class="form">
+    <% if flash[:alert] %>
+      <div class="alert alert-danger">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
     <%= form_for(@room) do |room| %>
         <div class="row">
             <div class="col-md-6">
@@ -37,43 +42,7 @@
             </div>
         </div>
 
-        <div class="first-image-field" id="image-fields">
-            <div class="field">
-                <%= room.label :image %>
-                <%= room.file_field :image %>
-            </div>
-        </div>
-
-        <button type="button" onclick="addImageField()">
-            <i class="bi bi-plus-circle-fill"></i>
-        </button>
-
-        <script>
-            function addImageField() {
-                var imageFields = document.getElementById("image-fields");
-                var imageFieldCount = imageFields.getElementsByClassName("field").length;
-                if (imageFieldCount < 3) {
-                    var newImageField = document.createElement("div");
-                    newImageField.classList.add("field");
-                    newImageField.innerHTML = `
-                        <%= room.label :image %>
-                        <%= room.file_field :image %>
-                        <button type="button" onclick="deleteImageField(this)">
-                            <i class="bi bi-dash-circle-fill"></i>
-                        </button>
-                    `;
-                    imageFields.appendChild(newImageField);
-                }
-            }
-
-            function deleteImageField(button) {
-                var imageField = button.parentNode;
-                imageField.parentNode.removeChild(imageField);
-            }
-        </script>
-
         <div class="actions">
-            <%= room.submit "Update" %>
+            <%= room.submit "Create" %>
         </div>
     <% end %>
-</div>
