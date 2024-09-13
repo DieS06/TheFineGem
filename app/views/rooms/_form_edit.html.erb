@@ -1,0 +1,45 @@
+<div class="form">
+    <%= form_for(@room) do |room| %>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="field">
+                    <%= room.label :hotel_name %>
+                    <%= room.text_field :hotel_name, value: @room.hotel.name, readonly: true %>
+                    <%= room.hidden_field :hotel_id, value: @room.hotel_id %>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="field">
+                    <%= room.label :status %>
+                    <%= room.select :status, Room.statuses.keys.map { |status| [status.humanize, status] }, { selected: @room.status }, class: "container-status" %>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="field">
+                    <%= room.label :room_type %>
+                    <%= room.select :room_type, Room.room_types.keys.map { |room_types| [room_types.humanize, room_types] }, { value: @room.room_type }, class: "container-room-type" %>
+                </div>
+                <div class="field">
+                    <%= room.label :beds, "No.Beds" %>
+                    <%= room.number_field :beds,  value: @room.beds  %>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="field">
+                    <%= room.label :price_per_night, "Night Price" %>
+                    <%= room.number_field :price_per_night,  value: @room.price_per_night  %>
+                </div>
+                <div class="field">
+                    <%= room.label :capacity %>
+                    <%= room.number_field :capacity,  value: @room.capacity %>
+                </div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <%= room.submit "Update" %>
+        </div>
+    <% end %>
+</div>

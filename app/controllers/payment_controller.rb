@@ -1,65 +1,52 @@
 class PaymentController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_reserve_room
+  before_action :set_payment, only: %i[ show edit update destroy ]
+  load_and_authorize_resource
   # GET /payments
   def index
-    @payments = Payment.all
+    @payments = Payment.page(params[:page]).per(15)
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "No payments found."
+    redirect_to root_path
   end
 
   # Get /payments/1
   def show
     @payment = Payment.find(params[:id])
-    authorize! :read, @payment
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "Payment not found."
+    redirect_to payments_path
   end
 
   # GET /payments/new
   def new
-    @payment = Payment.new(payment_params)
-    authorize! :new, @payment
-    if @payment.new
-      flash[:notice] = "Payment was successful"
-      redirect_to @payment
-    else
-      flash[:error] = "Payment was unsuccessful"
-      redirect_to "hotels#index"
-    end
+    @reserve_room = ReserveRoom.find(params[:reserve_room_id])
+    @payment = @reserve_room.build_payment
   end
 
   # POST
   def create
+    @reserve_room = ReserveRoom.find(params[:reserve_room_id])
+    @payment.transaction_id = generate_transaction_id
+    @payment.user_id = current_user
     @payment = Payment.new(payment_params)
-    @payment.user_id = current_user.id
-    @payment.reserve_id = params[:reserve_id]
     if @payment.save
-      flash[:notice] = "Payment was successful"
-      redirect_to "hotels#index"
+       redirect_to @reserve_room, notice: "Payment was successfully created."
     else
-      flash[:error] = "Payment was unsuccessful"
-      redirect_to "hotels#index"
+      render :new
     end
-  end
-
-  # PUT
-  def update
-  end
-
-  # DELETE
-  def destroy
   end
 
   private
 
-  def payment_params
-    params.require(:payment).permit(:user_id, :reserve_id,
-     :payment_method, :total_amount, :payment_date,
-      :transaction_id)
+  def set_reserve_room
+    @reserve_room = ReserveRoom.find(params[:reserve_room_id])
   end
 
-  def catch_exception(exception)
-    rescue_from CanCan::AccessDenied do |exception|
-      respond_to do |format|
-        format.json { head :forbidden }
-        format.html { redirect_to "hotels#index", alert: exception.message }
-      end
-    end
-    render json: { error: exception.message }, status: 500
+  def payment_params
+    params.require(:payment).permit(:user_id,
+    :reserve_id, :payment_method, :total_amount,
+     :payment_date, :transaction_id)
   end
 end

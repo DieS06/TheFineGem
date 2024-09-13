@@ -1,0 +1,43 @@
+<section class="sec-select-room">
+    <div class="main-title">
+        <h2><%= @hotel.name %></h2>
+    </div>
+    <div class="hotel-details">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="field">
+                    <strong>Phone:</strong>
+                    <p><%= @hotel.phone %></p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="field">
+                    <strong>Address:</strong>
+                    <p><%= @hotel.address.compound_address %></p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="field">
+                    <strong>Email:</strong>
+                    <p><%= @hotel.email %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <hr class="divider">
+    </div>
+
+    <div class="form-container">   
+        <div class="reservation-instructions">
+            <p class="sel-title">Select a room, click the "Select" button</p> 
+            <%= form_with url: reserve_room_path, method: :post do |form| %>
+                <%= render 'hotels/card_sel_room', locals: { hotel_rooms: @hotel.rooms, room_type: @room_type } %>
+            <% end %>
+        </div>          
+    </div>
+    <div class="row">
+        <hr class="divider">
+    </div> 
+</section>

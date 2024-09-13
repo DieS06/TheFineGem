@@ -1,80 +1,48 @@
-<%= form_with(model: @rooms, local: true) do |form| %>
-    <% if @room.errors.any? %>
-        <div id="error_explanation">
-            <h2><%= pluralize(@room.errors.count, "error") %> prohibited this room from being saved:</h2>
-
-            <ul>
-                <% @room.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-    <% end %>
-            </ul>
-        </div>
+    <% if flash[:alert] %>
+      <div class="alert alert-danger">
+        <%= flash[:alert] %>
+      </div>
     <% end %>
 
-    <div class="row">
-        <div class="col-md-6">
-            <div class="field">
-                <%= form.label :room_type %>
-                <%= form.select :room_type, Room.room_types.keys.map { |room_types| [room_types.humanize, room_types] }, {}, class: "container-room-type" %>
+    <%= form_for(@room) do |room| %>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="field">
+                    <%= room.label :hotel_name %>
+                    <%= room.select :hotel_id, options_from_collection_for_select(@user.hotels, :id, :name, @room.hotel_id), {}, class: "container-hotel-name" %>
+                </div>
             </div>
-            <div class="field">
-                <%= form.label :phone %>
-                <%= form.text_field :phone %>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="field">
-                <%= form.label :last_name %>
-                <%= form.text_field :last_name %>
-            </div>
-            <div class="field">
-                <%= form.label :email %>
-                <%= form.text_field :email %>
+            <div class="col-md-6">
+                <div class="field">
+                    <%= room.label :status %>
+                    <%= room.select :status, Room.statuses.keys.map { |status| [status.humanize, status] }, { selected: @room.status }, class: "container-status" %>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="field">
-        <%= form.label :description %>
-        <%= form.text_area :description %>
-    </div>
-
-    <div class="first-image-field" id="image-fields">
-        <div class="field">
-            <%= form.label :image %>
-            <%= form.file_field :image %>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="field">
+                    <%= room.label :room_type %>
+                    <%= room.select :room_type, Room.room_types.keys.map { |room_types| [room_types.humanize, room_types] }, { value: @room.room_type }, class: "container-room-type" %>
+                </div>
+                <div class="field">
+                    <%= room.label :beds, "No.Beds" %>
+                    <%= room.number_field :beds,  value: @room.beds  %>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="field">
+                    <%= room.label :price_per_night, "Night Price" %>
+                    <%= room.number_field :price_per_night,  value: @room.price_per_night  %>
+                </div>
+                <div class="field">
+                    <%= room.label :capacity %>
+                    <%= room.number_field :capacity,  value: @room.capacity %>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <button type="button" onclick="addImageField()">
-        <i class="bi bi-plus-circle-fill"></i>
-    </button>
-
-    <script>
-        function addImageField() {
-            var imageFields = document.getElementById("image-fields");
-            var imageFieldCount = imageFields.childElementCount;
-            if (imageFieldCount < 3) {
-                var newImageField = document.createElement("div");
-                newImageField.innerHTML = `
-                    <div class="field">
-                        <%= form.label :image %>
-                        <%= form.file_field :image %>
-                        <button type="button" onclick="deleteImageField(this)">
-                            <i class="bi bi-dash-circle-fill"></i>
-                        </button>
-                    </div>
-                `;
-                imageFields.appendChild(newImageField);
-            }
-        }
-
-        function deleteImageField(button) {
-            var imageField = button.parentNode;
-            imageField.parentNode.removeChild(imageField);
-        }
-    </script>
-
-    <div class="actions">
-        <%= form.submit %>
-    </div>
-<% end %>
+        <div class="actions">
+            <%= room.submit "Create" %>
+        </div>
+    <% end %>

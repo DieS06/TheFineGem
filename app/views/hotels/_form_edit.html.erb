@@ -1,0 +1,78 @@
+<%= form_with(model: @hotels, local: true) do |form| %>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="field">
+                <%= form.label :name %>
+                <%= form.text_field :name, value: @hotel.name %>
+            </div>
+            <div class="field">
+                <%= form.label :phone %>
+                <%= form.text_field :phone, value: @hotel.phone %>
+            </div>
+            <div class="field">
+                <%= form.label :email %>
+                <%= form.text_field :email, value: @hotel.email %>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="container-address">
+                <%= form.fields_for :address do |address_form| %>
+                    <%= render 'address/form', form: address_form %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <div class="field-description">
+        <%= form.label :description %>
+        <%= form.text_area :description, value: @hotel.description %>
+    </div>
+
+   <div class="first-image-field" id="image-fields">
+    <%= form.label :images %>
+        <% @hotel.images.each_with_index do |image, index| %>
+            <div class="field">
+            <%= form.hidden_field :images_cache, value: rails_blob_url(image, only_path: true) %>
+            <%= form.file_field :images,multiple: true, class: "img-select", data: { direct_upload: true } %>
+            <button class="btn-current"><%= link_to 'Current', rails_blob_url(image, only_path: true)%></button>
+            <button type="button" onclick="deleteImageField(this)">
+                <i class="bi bi-dash-circle-fill"></i>
+            </button>
+            </div>
+    <% end %>
+    </div>
+
+    <div class="add-btn">
+        <button type="button" onclick="addImageField()">
+            <i class="bi bi-plus-circle-fill"></i>
+        </button>
+    </div>
+
+    <script>
+        function addImageField() {
+            var imageFields = document.getElementById("image-fields");
+            var imageFieldCount = imageFields.getElementsByClassName("field").length;
+            if (imageFieldCount < 3) {
+                var newImageField = document.createElement("div");
+                newImageField.className = "field";
+                newImageField.innerHTML = `
+                    <input type="file" name="hotel[images][]" class="img-select">
+                    <button type="button" onclick="deleteImageField(this)">
+                        <i class="bi bi-dash-circle-fill"></i>
+                    </button>
+                `;
+                imageFields.appendChild(newImageField);
+            } else {
+                alert("You can only upload a maximum of 3 images.");
+            }
+        }
+
+        function deleteImageField(button) {
+            var imageField = button.parentNode;
+            imageField.parentNode.removeChild(imageField);
+        }
+    </script>
+
+    <div class="actions">
+        <%= form.submit %>
+    </div>
+<% end %>

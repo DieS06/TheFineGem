@@ -1,0 +1,41 @@
+        <div class="form">
+            <%= form_for(@user) do |user| %>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="field">
+                            <%= user.label :first_name %>
+                            <%= user.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
+                            </div>
+                        </div>
+                    <div class="col-md-6">
+                        <div class="field">
+                            <%= user.label :last_name %>
+                            <%= user.text_field :last_name, autocomplete: "last_name" %>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="field">
+                            <%= user.label :id_number %>
+                            <%= user.text_field :id_number, autocomplete: "id_number" %>
+                            </div>
+                        </div>
+                    <div class="col-md-6">
+                        <div class="field">
+                            <%= user.label :phone %>
+                            <%= user.text_field :phone, autofocus: true, autocomplete: "phone" %>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field email-field">
+                    <%= user.label :email %>
+                    <%= user.email_field :email, autofocus: true, autocomplete: "email" %>
+                </div>
+
+                <div class="actions">
+                    <%= user.submit "Update" %>
+                </div>
+            <% end %>
+        </div>

@@ -1,0 +1,48 @@
+@import "variables.scss";
+
+.sec-update-user {
+    width: 100%;
+    .main-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+   
+        h2 {
+            font-size: 4.3rem;
+            margin-bottom: 1rem;
+            width: 50%;
+
+            &:before,
+            &:after {
+                width: 33%;
+            }
+        }
+    }
+    .form-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60%;
+        margin: 0 auto;
+    }
+}
+
+.field .current-password {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.row .divider{
+    color: $light-primary;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.row .leave-blank {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}

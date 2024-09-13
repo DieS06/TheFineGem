@@ -9,18 +9,12 @@ class Ability
     if user.admin?
         can :manage, :all
     elsif user.client?
-          can :read, Hotel, action: :index
-          can :read, [ Room, ReserveRoom, Comment, Address ]
-          can :create, [ User, ReserveRoom ]
-          can :update, ReserveRoom, User: user
-          can :destroy, ReserveRoom, User: user
+          can :read, [ Hotel, Room, ReserveRoom, Comment, Address ]
+          can :create, [ User, ReserveRoom, Comment ]
+          can :update, ReserveRoom, Comment, User: user
+          can :destroy, ReserveRoom, Comment, User: user
     else
-          can :read, Hotel, action: :index
-          can :read, Room, through: Hotel
-          can :read, ReserveRoom, through: Room
-          can :read, Comment, through: Hotel
-          can :read, Address, through: Hotel
-          can :create, User, action: :new
+          can :read, Hotel
     end
   end
 end

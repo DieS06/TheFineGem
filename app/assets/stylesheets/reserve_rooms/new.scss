@@ -1,0 +1,107 @@
+@import "variables";
+
+.sec-reserve{
+    width: 100%;
+    
+    .main-title{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h2{
+            font-size: 4.3rem;
+            width: 100%;
+        
+            &:before,
+            &:after {
+                width: 39%;
+            }
+            
+            &:before{
+                left: -30px
+            }
+
+            &:after{
+            right: -30px
+            } 
+        }
+    }
+
+    .form-container{
+
+        form{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60%;
+            margin: 0 auto;
+
+            .row{
+                .col{
+                    .field{
+                        width: 100%;
+                        margin-bottom: 0.5rem;
+
+                        input{
+                            color: $white;
+                            padding-left: 0.5rem;
+                        }
+
+                        .custom-date-field::-webkit-calendar-picker-indicator {
+                            filter: invert(1);
+                            color: $white;
+                            &:hover{
+                                filter: invert(0.5);
+                            }
+                        }
+
+                        .custom-date-field{
+                            &:hover{
+                                color: $middle-primary;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .field-description{
+                width: 97.5%;
+                margin: 0.5rem;
+
+                textarea{
+                    width: 100%;
+                    height: 50px;
+                    padding: 0.5rem;
+                    color: $white;
+                    border: none;
+                }
+            }
+
+            .field-amount{
+                width: 97.5%;
+                margin: 0.5rem;
+
+                input{
+                    width: 100%;
+                    padding-left: 0.5rem;
+                    color: $white;
+                }
+
+                label {
+                    margin-left: 0.5rem;
+                    margin-bottom: 0.2rem;
+                    font-family: "Roboto Flex", sans-serif;
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    color: $white;
+                }
+            }
+
+            .actions{
+                margin-top: 2rem;
+            }
+        }
+    }
+
+  
+}

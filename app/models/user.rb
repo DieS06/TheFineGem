@@ -21,12 +21,17 @@ class User < ApplicationRecord
   message: "must be a valid phone number" }
   validates :id_number, presence: true
   validates :email, presence: true, uniqueness: true,
-  format: { with: URI::MailTo::EMAIL_REGEXP,
-  message: "must be a valid phone number" }
-  validates :password, presence: true
+  format: { with: URI::MailTo::EMAIL_REGEXP, message: "must be a valid phone number" }
+  validates :password, presence: true, if: :password_required?
   validates :role, presence: true
 
   def full_name
     "#{first_name} #{last_name}"
+  end
+
+  private
+
+  def password_required?
+    new_record? || password.present?
   end
 end

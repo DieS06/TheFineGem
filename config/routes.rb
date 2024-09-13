@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
+  mount Fakesite::Engine => "/fakesite" if Rails.env.development?
+
   devise_for :users, controllers: {
   sessions: "users/sessions",
   registrations: "users/registrations",
@@ -11,24 +13,19 @@ Rails.application.routes.draw do
   confirmations: "users/confirmations",
   unlocks: "users/unlocks"
   }
-  resources :users, only: [ :index, :show ]
 
-  authenticated :user do
-    root to: "hotels#index", as: :authenticated_root
+  root to: "hotels#index"
+
+  resources :users, only: [ :index, :show, :destroy, :edit, :update ]
+  resources :hotels, only: [ :index, :show, :new, :create, :edit, :update, :destroy ] do
+    resources :addresses, only: [ :index, :show, :new, :create, :edit, :update, :destroy ]
   end
 
-  unauthenticated do
-    devise_scope :user do
-      root to: "users/sessions#new", as: :unauthenticated_root
-    end
+  resources :rooms, only: [ :index, :show, :new, :create, :edit, :update, :destroy ]  do
+    resources :comments
   end
 
-  resources :hotels do
-    resources :addresses
-  end
-  resources :rooms
-  resources :comments
-  resources :reserve_rooms do
-    resources :payments
+    resources :reserve_rooms, only: [ :index, :show, :new, :create, :edit, :destroy ]  do
+      resources :payments, only: [ :index, :show, :new, :create, :edit ]
   end
 end

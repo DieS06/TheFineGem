@@ -23,7 +23,11 @@
  @import "devise/log-in";
  @import "devise/sign-up";
  @import "hotels/index";
+ @import "hotels/show";
+ @import "hotels/new";
+ @import "reserve_rooms/new";
  @import "_variables";
+ @import "simple_calendar";
 
 body {
     font-family: 'Roboto Flex', sans-serif;
@@ -194,6 +198,19 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 1rem;
+    
+    tbody {
+        tr {
+            background: $neutro-primary;
+
+            tr:nth-child(even) {
+                background-color: $neutro-primary;
+                &:hover {
+                    background: rgba($light-primary, 0.5);
+                }
+            }
+        }
+    }
 }
 
 th, td {
@@ -204,12 +221,29 @@ th, td {
 
 th {
     font-weight: bold;
+    background: $table-header-gradient;
+    color: $white;
+    text-align: center;
 }
 
-tr:nth-child(even) {
-    background-color: $neutro-primary;
+
+
+.alert-danger{
+    text-align: center;
+    background-color: rgba(red, 1);
+    color: $white;
+    border: none;
+    padding: 0.7rem;
+    margin-bottom: 1.5rem;
+    width: 80%;
 }
 
-tr:hover {
-    background-color: $neutro-secondary;
+.alert-success{
+    text-align: center;
+    background-color: rgba(green, 1);
+    color: $white;
+    border: none;
+    padding: 0.7rem;
+    margin-bottom: 1.5rem;
+    width: 80%;
 }

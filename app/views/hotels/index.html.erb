@@ -42,24 +42,21 @@
                                 <div class="col-md-4">
                                     <div class="container">
                                         <label>Night Price :</label>
-                                        <p class="card-text"></p>
+                                        <p class="card-text">$ <%= hotel.rooms.minimum(:price_per_night).to_i %> - $ <%= hotel.rooms.maximum(:price_per_night).to_i %></p>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="col-md-6">
-                                        <%= link_to 'Reserve', reserve_room_path("/"), class: 'btn' %>   
-                                </div>
-                                <div class="col-md-6">
-                                        <%= link_to 'See more', reserve_room_path("/"), class: 'btn' %>
+                                <div class="col-md-6 reserve">
+                                        <%= link_to 'Reserve', hotel_path(hotel.id), class: 'btn' %>
                                 </div>
                             </div>                    
                         
                         </div>
                     </div>
                     <div class="col-md-6 image">
-                        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                        <div id="carouselExample<%= hotel.id %>" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <% hotel.images.limit(3).each_with_index do |image, index| %>
                                     <div class="carousel-item <%= 'active' if index == 0 %>">
@@ -67,14 +64,12 @@
                                     </div>
                                 <% end %>
                             </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample<%= hotel.id %>" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample<%= hotel.id %>" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                </button>
                         </div>
                     </div>
                 </div> 

@@ -1,0 +1,43 @@
+<div class="container-rooms">
+    <% grouped_rooms = @hotel.rooms.group_by(&:room_type) %>
+
+    <% grouped_rooms.each do |room_type, rooms| %>
+        <div class="column">
+            <div class="title-col">
+            <h2><%= room_type %></h2>
+            </div> 
+            <% rooms.each do |room| %>
+            <div class="col">
+                <div class="card mb-1">
+                <div class="card-body">
+                    <div class="row">
+                    <div class="col-md-6">
+                        <h3 class="card-title"><%= room.code %></h3>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="field">
+                        <strong>Price:</strong>
+                        <p class="card-text"><%= room.price_per_night %></p>
+                        </div>
+                        <div class="field">
+                        <strong>Capacity:</strong>
+                        <p class="card-text"><%= room.capacity %></p>
+                        </div>
+                        <div class="field">
+                        <strong>Beds:</strong>
+                        <p class="card-text"><%= room.beds %></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 check">
+                        <div class="form-check">
+                        <%= link_to 'Select', new_reserve_room_path(room_id: room.id), class: 'btn' %>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <% end %>
+        </div>
+    <% end %>
+</div>

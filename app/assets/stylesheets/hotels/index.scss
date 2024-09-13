@@ -6,13 +6,15 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 75%;
+    width: 90%;
     height: 100%;
 }
 
 .sec-catalog .main-title h2{
     margin-top: 0.7rem;
     font-size: 2.3rem;
+    margin-bottom: 2.5rem;
+
     &:before,
     &:after {
         width: 42%;
@@ -22,7 +24,7 @@
 .card{
     margin-bottom: 1rem;
     margin-left: 12.5%;
-    margin-top: 2.1rem;
+    margin-top: 1rem;
     background: $side-fade-gradient;
     display: flex;
     flex-direction: column;
@@ -40,7 +42,7 @@
         font-family: "New Amsterdam", sans-serif;
         font-size: 2.3rem;
         margin: 0;
-        padding-left: 4rem;
+
         text-shadow: 0 2px 4px rgba($neutro-primary, 0.5);
     }
 
@@ -64,7 +66,7 @@
                     
                     .card-text{
                         font-family: "Roboto Flex", sans-serif;
-                        color: $neutro-primary;
+                        color: $white;
                         font-size: 1rem;
                     }
                 }
@@ -75,8 +77,8 @@
                     label{
                         display: block;
                         font-family: "New Amsterdam", sans-serif;
-                        color: $middle-primary;
-                        font-size: 1rem;
+                        color: $neutro-primary;
+                        font-size: 1.3rem;
                         text-shadow: 0 2px 4px rgba($neutro-primary, 0.5);
                         letter-spacing: 0.1rem;  
                     }
@@ -84,7 +86,7 @@
 
                 .card-text{
                     font-family: "Roboto Flex", sans-serif;
-                    color: $neutro-primary;
+                    color: $white;
                     margin-bottom: 0.2rem;
                     padding-top: 0;
                     margin-left: 1rem;
@@ -93,6 +95,7 @@
             }
 
             .carousel{
+                width: 100%;
                 .carousel-inner{
                     .carousel-item{
                         img{
@@ -107,24 +110,33 @@
                 }
             }
 
-            .btn{
-                width: 60%;
+            .reserve{
+                width: 80%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-left: 5rem;
+
+                .btn{
+                    width: 90%;
+                }
             }
+
         }
 
         .col-md-4{
             .container{
                 label{
                     font-family: "New Amsterdam", sans-serif;
-                    color: $middle-primary;
-                    font-size: 1rem;
+                    color: $neutro-primary;
+                    font-size: 1.3rem;
                     text-shadow: 0 2px 4px rgba($neutro-primary, 0.5);
                     letter-spacing: 0.1rem;
                 }
 
                 .card-text{
                     font-family: "Roboto Flex", sans-serif;
-                    color: $neutro-primary;
+                    color: $white;
                     margin-bottom: 0.2rem;
                     margin-left: 1rem;
                     font-size: 0.8rem;
@@ -156,21 +168,53 @@
                         color: $light-secondary;
                     }
                 }
+
+                .first{
+                    a{
+                        color: $white;
+                        &:hover{
+                            color: $light-primary;
+                        }
+                    }
+                }
+                .prev{
+                    a{
+                        color: $white;
+                        &:hover{
+                            color: $light-primary;
+                        }
+                    }
+                }
+                .next{
+                    a{
+                        color: $white;
+                        &:hover{
+                            color: $light-primary;
+                        }
+                    }
+                }
+                .last{
+                    a{
+                        color: $white;
+                        &:hover{
+                            color: $light-primary;
+                        }
+                    }
+                }
                 
                 .current{
-                    color: $light-primary;
-
+                    color: $white;
                     &:hover{
-                        color: $light-secondary;
+                        color: $white;
                     }
                 }
 
                 a{
-                    color: $white;
+                    color: $light-primary;
                     text-decoration: none;
         
                     &:hover{
-                        color: $light-secondary;
+                        color: $white;
                     }
                 }
         }

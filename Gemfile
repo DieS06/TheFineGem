@@ -21,10 +21,8 @@ gem "jquery-rails", "~> 4.4"
 gem "dartsass-sprockets"
 gem "popper_js"
 
-gem "excon"
-gem "calendar_date_select"
-gem "notifications_opener"
-gem "messaging_gateway"
+gem 'simple_calendar', '~> 3.0', '>= 3.0.4'
+gem 'fakesite', '~> 0.2.3'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"

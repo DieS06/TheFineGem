@@ -12,63 +12,26 @@
                 <% if user_signed_in? %>
                     <% if current_user.client?%>
                         <li class="dropdown">
-                            <a class="link-nav dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Hotels
+                            <a class="link-nav" href="/hotels" aria-expanded="false">
+                                Hotels Catalog
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>
-                                    <a class="dropdown-item" href="/hotels">Catalog</a>
-                                </li>
-                            </ul>
                         </li>
                     <% else%>
                         <li class="dropdown">
-                            <a class="link-nav dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Users
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>
-                                    <a class="dropdown-item" href="/users">List Users</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="/users/sign_up">Create User</a>
-                                </li>
-                            </ul>
+                            <%= link_to 'Users', users_path, class: 'link-nav', aria: { expanded: false } %>
                         </li> 
                         <li class="dropdown">
-                            <a class="link-nav dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Hotels
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>
-                                    <a class="dropdown-item" href="/hotels">Catalog</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="/rooms">List Hotel</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="/hotels/new">Create Hotel</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="/rooms/new">Create Room</a>
-                                </li>
-                            </ul>
+                             <%= link_to 'Hotels Catalog', hotels_path, class: 'link-nav', aria: { expanded: false } %>
                         </li> 
                         <li class="dropdown">
-                            <a class="link-nav dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Reservations
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>
-                                    <a class="dropdown-item" href="/reservations/new">Add</a>
-                                </li>
-                            </ul>
+                             <%= link_to 'My Hotel', rooms_path, class: 'link-nav', aria: { expanded: false } %>
                         </li> 
+                        <li class="dropdown">
+                            <%= link_to 'Reservations', reserve_rooms_path, class: 'link-nav', aria: { expanded: false } %>
+                        </li>
                     <% end %>
                 <% else %>
-                    <li class="catalog">
-                        <a class="link-catalog" href="/hotels">Hotels</a>
-                    </li>  
+
                 <% end %>  
             </ul> 
         </div>
@@ -90,11 +53,18 @@
             </div>
             <% else %>
                 <div class="btn-container">
-                    <% if (current_page?(new_session_path(resource_name)) || current_page?('/')) %>
+                    <% if request.path == new_session_path(resource_name) %>
                         <div class="btn-sign-up">
                             <%= link_to 'Sign Up', new_registration_path(resource_name), class: 'btn' %>
                         </div>
-                    <%else%>
+                    <% elsif request.path == new_registration_path(resource_name) || request.path == user_registration_path %>
+                        <div class="btn-sign-in">
+                            <%= link_to 'Sign In', new_session_path(resource_name), class: 'btn' %>
+                        </div>    
+                    <% else %>
+                        <div class="btn-sign-up">
+                            <%= link_to 'Sign Up', new_registration_path(resource_name), class: 'btn' %>
+                        </div> 
                         <div class="btn-sign-in">
                             <%= link_to 'Sign In', new_session_path(resource_name), class: 'btn' %>
                         </div>
