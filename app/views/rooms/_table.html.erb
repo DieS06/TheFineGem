@@ -1,7 +1,7 @@
 <table>
     <thead>
         <tr>
-            <th>Hotel</th>
+            <th colspan="2">Hotel</th>
             <th>Room</th>
             <th>Type</th>
             <th>Capacity</th>
@@ -16,6 +16,11 @@
     <tbody>
         <% @rooms.sort_by { |room| room.hotel.name }.each do |room| %>
             <td><%= room.hotel.name %></td>
+            <td class="td-update"> 
+                <%= link_to edit_hotel_path(room.hotel), class: 'update' do %>
+                    <i class="bi bi-pencil-fill"></i>
+                <% end %>
+            </td>
             <td><%= room.code %></td>
             <td><%= room.room_type.capitalize %></td>
             <td><%= room.capacity %></td>

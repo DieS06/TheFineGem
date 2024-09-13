@@ -13,3 +13,9 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+
+    <div class="field">
+        <%= form.label :payment_method %>
+        <%= form.select :payment_method, options_for_select(['Credit Card', 'Debit Card', 'PayPal']) %>
+    </div>

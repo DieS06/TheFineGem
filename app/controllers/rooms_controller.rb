@@ -1,7 +1,7 @@
 class RoomsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_room, only: %i[ show edit update destroy ]
-  before_action :set_user, only: %i[ new edit create update ]
+  before_action :set_room, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_user, only: [ :new, :edit, :create, :update ]
   before_action :authorize_admin, only: [ :new, :create, :edit, :update, :destroy ]
   load_and_authorize_resource
 
@@ -15,9 +15,10 @@ class RoomsController < ApplicationController
 
   # GET /rooms/1
   def show
+    @rooms = Room.where(id: room_ids).page(params[:page]).per(12)
   rescue ActiveRecord::RecordNotFound
-      flash[:alert] = "Room not found."
-      redirect_to rooms_path
+      flash[:alert] = "Not rooms available for this hotel."
+      redirect_to root_path
   end
 
   # GET /rooms/new
@@ -33,13 +34,10 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(room_params)
     if @room.save
-      Rails.logger.debug "Before setting number_of_rooms: #{@room.number_of_rooms}"
       @room.set_number_of_room
       @room.hotel.rooms.each(&:save)
-      flash[:notice] = "Room was successfully created."
-      redirect_to @room
+      redirect_to @room, notice: "Room was successfully created."
     else
-      Rails.logger.debug @room.errors.full_messages.to_sentence
       flash[:alert] = "Creation failed. Please check the form for errors and try again."
       render :new
     end
@@ -48,7 +46,7 @@ class RoomsController < ApplicationController
   # PUT
   def update
     if @room.update(room_params)
-      redirect_to rooms_path, notice: "Room was successfully updated."
+      redirect_to @room, notice: "Room was successfully updated."
     else
       flash[:alert] = "Update failed. Please check the form for errors and try again."
       render :edit
@@ -58,7 +56,7 @@ class RoomsController < ApplicationController
   # DELETE
   def destroy
     @room.destroy
-    redirect_to rooms_path
+    redirect_to rooms_path, notice: "Room was successfully destroyed."
   end
 
   private
@@ -69,6 +67,9 @@ class RoomsController < ApplicationController
 
   def set_user
     @user = current_user
+  end
+
+  def set_hotel
   end
 
   def room_params

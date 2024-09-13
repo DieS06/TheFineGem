@@ -9,13 +9,21 @@ class HotelsController < ApplicationController
     @address = Address.all
   rescue ActiveRecord::RecordNotFound
     flash[:alert] = "No hotels found."
-    redirect_to root_path
   end
 
   # GET /hotels/1 or /hotels/1.json
   def show
-    @hotel = Hotel.find(params[:hotel_id])
-    @rooms = @hotel.rooms.availabl
+    @hotel = Hotel.find(params[:id])
+    @economic_rooms = @hotel.rooms.where(room_type: "Economic")
+    @premium_rooms = @hotel.rooms.where(room_type: "Premium")
+    @luxury_rooms = @hotel.rooms.where(room_type: "Luxury")
+
+    room_ids = @hotel.rooms.pluck(:id)
+    @rooms = Room.where(id: room_ids).page(params[:page]).per(12)
+    @rooms = @rooms.where(status: "available")
+
+    @room = @rooms.first
+    @room_type = @room.room_type if @room
   rescue ActiveRecord::RecordNotFound
     flash[:alert] = "Hotel not found."
     redirect_to hotels_path
@@ -80,7 +88,8 @@ private
       { room_ids: [] },
       :rating,
       { images: [] },
-      address_attributes: [ :country, :city, :place_name ]
+      address_attributes: [ :country,
+      :city, :place_name ]
     )
   end
 

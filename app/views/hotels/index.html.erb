@@ -48,14 +48,9 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-6">
-                                        <%= link_to 'Reserve', hotel_path(hotel), class: 'btn' %>
+                                <div class="col-md-6 reserve">
+                                        <%= link_to 'Reserve', hotel_path(hotel.id), class: 'btn' %>
                                 </div>
-                                <% if user_signed_in? %>
-                                    <div class="col-md-6">
-                                    <%= link_to 'See more', hotel_path(hotel), class: 'btn' %>
-                                    </div>
-                                <% end %>
                             </div>                    
                         
                         </div>

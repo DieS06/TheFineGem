@@ -17,12 +17,14 @@ Rails.application.routes.draw do
   root to: "hotels#index"
 
   resources :users, only: [ :index, :show, :destroy, :edit, :update ]
-  resources :hotels do
+  resources :hotels, only: [ :index, :show, :new, :create, :edit, :update, :destroy ] do
     resources :addresses, only: [ :index, :show, :new, :create, :edit, :update, :destroy ]
   end
+
   resources :rooms, only: [ :index, :show, :new, :create, :edit, :update, :destroy ]  do
     resources :comments
   end
+
     resources :reserve_rooms, only: [ :index, :show, :new, :create, :edit, :destroy ]  do
       resources :payments, only: [ :index, :show, :new, :create, :edit ]
   end

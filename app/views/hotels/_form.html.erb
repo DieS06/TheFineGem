@@ -53,16 +53,15 @@
         <script>
             function addImageField() {
                 var imageFields = document.getElementById("image-fields");
-                var imageFieldCount = imageFields.childElementCount;
-                if (imageFieldCount < 4) {
+                var imageFieldCount = imageFields.getElementsByClassName("field").length;
+                if (imageFieldCount < 3) {
                     var newImageField = document.createElement("div");
+                    newImageField.className = "field";
                     newImageField.innerHTML = `
-                        <div class="field">
                             <input type="file" name="hotel[images][]" class="img-select">
                             <button type="button" onclick="deleteImageField(this)">
                                 <i class="bi bi-dash-circle-fill"></i>
                             </button>
-                        </div>
                     `;
                     imageFields.appendChild(newImageField);
                 } else {

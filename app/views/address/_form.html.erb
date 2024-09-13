@@ -1,15 +1,15 @@
 
         <div class="field">
             <%= form.label :country %>
-            <%= form.text_field :country %>
+            <%= form.text_field :country, value: @hotel.address.country %>
         </div>
 
         <div class="field">
             <%= form.label :city %>
-            <%= form.text_field :city %>
+            <%= form.text_field :city, value: @hotel.address.city %>
         </div>
 
         <div class="field">
             <%= form.label :place_name, 'Place address' %>
-            <%= form.text_field :place_name %>
+            <%= form.text_field :place_name, value: @hotel.address.place_name %>
         </div>

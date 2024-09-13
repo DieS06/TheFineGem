@@ -4,12 +4,6 @@
     </div>
 
     <div class="form-container">
-        <% if flash[:alert] %>
-            <div class="alert alert-danger">
-                <%= flash[:alert] %>
-            </div>
-        <% end %>
-
         <%= render 'form_edit', hotel: @hotel %>
     </div>
 </section>

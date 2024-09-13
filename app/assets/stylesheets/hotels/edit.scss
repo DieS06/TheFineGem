@@ -1,0 +1,95 @@
+@import "_variables";
+
+.sec-edit-hotels{
+    width: 100%;
+    margin-top: 2rem;
+    .main-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+   
+        h2 {
+            font-size: 4.3rem;
+            margin-bottom: 0.5rem;
+            width: 100%;
+
+            &:before,
+            &:after {
+                width: 21%;
+            }
+
+            &:before{
+                left: -30px
+            }
+
+            &:after{
+               right: -30px
+            }
+        }
+    }
+
+    .form-container form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60%;
+        margin: 0 auto;
+
+        .row{
+            .field{
+                input{
+                    color: $white;
+                    padding-left: 0.5rem;
+                }
+
+                select{
+                    color: $white;
+                    background-color: rgba($light-secondary, 0.5);
+                    border: none;
+                    padding-left: 0.5rem;
+                    padding: 0.2rem;
+                }
+            }
+        }
+
+        .field-description{
+            width: 96.5%;
+            margin: 1rem 0;
+            textarea{
+                width: 100%;
+                height: 50px;
+                padding: 0.5rem;
+                color: $white;
+                border: none;
+            }
+        }
+
+        #image-fields{
+            width: 96.5%;
+
+            label{
+                margin-left: 0;
+            }
+
+            .btn-current{
+                background: $light-primary;
+                color: $white;
+                border: none;
+                padding: 0.3rem;
+                margin: 0.2rem;
+                cursor: pointer;
+                border-radius: 3px;
+                text-align: center;
+
+                a{
+                    color: $white;
+                    text-decoration: none;
+                }
+
+                &:hover{
+                    background: $middle-secondary;
+                }
+            }
+        }
+    }
+}

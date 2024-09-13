@@ -18,35 +18,17 @@
                         </li>
                     <% else%>
                         <li class="dropdown">
-                            <a class="link-nav" href="/users"  aria-expanded="false">
-                                Users
-                            </a>
+                            <%= link_to 'Users', users_path, class: 'link-nav', aria: { expanded: false } %>
                         </li> 
                         <li class="dropdown">
-                            <a class="link-nav dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Hotels
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>
-                                    <%= link_to 'Catalog', hotels_path, class: 'dropdown-item' %>    </li>
-                                <li>
-                                    <%= link_to 'My Hotels', rooms_path, class: 'dropdown-item' %>    
-                                </li>
-                            </ul>
+                             <%= link_to 'Hotels Catalog', hotels_path, class: 'link-nav', aria: { expanded: false } %>
                         </li> 
                         <li class="dropdown">
-                            <a class="link-nav dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Reservations
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>
-                                    <%= link_to 'My Reservations', reserve_rooms_path, class: 'dropdown-item' %>
-                                </li>
-                                <li>
-                                    <%= link_to 'New Reservation', new_reserve_room_path, class: 'dropdown-item' %>
-                                </li> 
-                            </ul>
+                             <%= link_to 'My Hotel', rooms_path, class: 'link-nav', aria: { expanded: false } %>
                         </li> 
+                        <li class="dropdown">
+                            <%= link_to 'Reservations', reserve_rooms_path, class: 'link-nav', aria: { expanded: false } %>
+                        </li>
                     <% end %>
                 <% else %>
 
