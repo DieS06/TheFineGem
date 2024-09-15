@@ -25,7 +25,8 @@ class HotelsController < ApplicationController
     @check_in_date = params[:check_in_date]
     @check_out_date = params[:check_out_date]
 
-    room_ids = @hotel.rooms.pluck(:id)
+    @min_price = @hotel.rooms.minimum(:price_per_night)
+    @max_price = @hotel.rooms.maximum(:price_per_night)
     @rooms = Room.where(id: room_ids).page(params[:page]).per(12)
     @room = @rooms.first
     @room_type = @room.room_type if @room
