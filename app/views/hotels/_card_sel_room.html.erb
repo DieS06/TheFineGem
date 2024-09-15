@@ -1,3 +1,22 @@
+<div class="date-selection-form">
+    <%= form_with(model: @reserve_room, local: true) do |form| %>
+        <div class="row">
+            <div class="col">
+                <div class="field">
+                    <%= form.label :check_in_date %>
+                    <%= form.date_field :check_in_date, value: (Date.today + 5.days).strftime("%Y-%m-%d"), class: "custom-date-field" %>
+                </div>
+            </div>
+            <div class="col">
+                <div class="field">
+                    <%= form.label :check_out_date %>
+                    <%= form.date_field :check_out_date, value: (Date.today + 5.days).strftime("%Y-%m-%d"), class: "custom-date-field" %>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>
+
 <div class="container-rooms">
     <% grouped_rooms = @hotel.rooms.group_by(&:room_type) %>
 
@@ -30,9 +49,8 @@
                     </div>
                     <div class="col-md-6 check">
                         <div class="form-check">
-                        <%= link_to 'Select', new_reserve_room_path(room_id: room.id), class: 'btn' %>
+                            <%= link_to 'Select', new_reserve_room_path(room_id: room.id, check_in_date: params[:reserve_room]&.dig(:check_in_date), check_out_date: params[:reserve_room]&.dig(:check_out_date)), class: 'btn' %>                        </div>
                         </div>
-                    </div>
                     </div>
                 </div>
                 </div>

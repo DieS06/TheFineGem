@@ -16,6 +16,13 @@ class ReserveRoom < ApplicationRecord
   validates :total_price, presence: true
   validates :payment_id, presence: true, if: :completed?
 
+  def total_amount
+    return 0 unless start_date && end_date && room
+
+    nights = (end_date - start_date).to_i
+    nights * room.price_per_night
+  end
+
   private
 
   def completed?

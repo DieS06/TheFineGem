@@ -17,10 +17,9 @@ class Room < ApplicationRecord
   validates :price_per_night, presence: true
   validates :number_of_rooms, numericality: { only_integer: true, greater_than: 0 }
 
-  def calculate_price(start_date, end_date)
-    total_days = (end_date - start_date).to_i
-    total_price = total_days * price_per_night
-    total_price
+  def calculate_price(check_in_date, check_out_date)
+    nights = (check_out_date - check_in_date).to_i
+    @reserve_room.total_price = nights * price_per_night
   end
 
   def status_check

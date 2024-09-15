@@ -1,29 +1,41 @@
 class HotelsController < ApplicationController
   before_action :authenticate_user!, except: [ :index ]
-  before_action :set_hotel, only: %i[show edit update destroy]
+  before_action :set_hotel, only: %i[ edit update destroy]
   load_and_authorize_resource
 
   # GET /hotels or /hotels.json
   def index
-    @hotels = Hotel.page(params[:page]).per(2)
+    @hotels = Hotel.includes(:address, images_attachments: :blob)
+                   .page(params[:page])
+                   .per(2)
     @address = Address.all
-  rescue ActiveRecord::RecordNotFound
+  rescue @hotels.empty?
     flash[:alert] = "No hotels found."
   end
 
   # GET /hotels/1 or /hotels/1.json
   def show
-    @hotel = Hotel.find(params[:id])
+    @hotel = Hotel.includes(:address, images_attachments: :blob)
+                  .find(params[:id])
+
     @economic_rooms = @hotel.rooms.where(room_type: "Economic")
     @premium_rooms = @hotel.rooms.where(room_type: "Premium")
     @luxury_rooms = @hotel.rooms.where(room_type: "Luxury")
 
+    @check_in_date = params[:check_in_date]
+    @check_out_date = params[:check_out_date]
+
     room_ids = @hotel.rooms.pluck(:id)
     @rooms = Room.where(id: room_ids).page(params[:page]).per(12)
-    @rooms = @rooms.where(status: "available")
-
     @room = @rooms.first
     @room_type = @room.room_type if @room
+
+    if @rooms = @rooms.where(status: "available") && @check_in_date.present? && @check_out_date.present?
+      redirect_to new_reserve_room_path(hotel_id: @hotel.id, check_in_date: @check_in_date, check_out_date: @check_out_date)
+    else
+      flash[:alert] = "Please provide both check-in and check-out dates."
+      redirect_to hotel_path(@hotel)
+    end
   rescue ActiveRecord::RecordNotFound
     flash[:alert] = "Hotel not found."
     redirect_to hotels_path

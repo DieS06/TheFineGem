@@ -19,9 +19,12 @@ class ReserveRoomsController < ApplicationController
 
   def new
     @room = Room.find(params[:room_id])
-    @reserve_room = ReserveRoom.new
-    @reserve_room.room_id = @room
-    @reserve_room.user = current_user
+    @reserve_room = ReserveRoom.new(
+      room: @room,
+      start_date: params[:check_in_date],
+      end_date: params[:check_out_date],
+      user: current_user
+    )
   end
 
   def edit
@@ -30,7 +33,6 @@ class ReserveRoomsController < ApplicationController
   def create
     @reserve_room = ReserveRoom.new(reserve_room_params)
     @reserve_room.user = current_user
-    @reserve_room.total_price = @reserve_room.total_price_cal
     @reserve_room.room = Room.find(params[:room_id])
     if @reserve_room.save
       redirect_to new_reserve_room_payment_path(@reserve_room), notice: "Reservation was successfully created."
