@@ -3,7 +3,7 @@
 //GENERAL INFORMATION
 .sec-select-room {
     width: 75%;
-    top: 45%;
+    top: 52%;
 
 .main-title{
      h2 {
@@ -12,7 +12,7 @@
 
         &:before,
         &:after {
-            width: 56%;
+            width: 48%;
         }
 
         &:before {
@@ -94,8 +94,7 @@
     }
 }
 
-//ROOM CARD STYLES
-    
+//ROOM CARD STYLES    
 .date-selection-form{
     display: flex;
             align-items: center;
@@ -260,6 +259,85 @@
             }
         }
     }
+
+//PAGINATION
+.pages-rooms{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    nav{
+        background: $icon-bg-gradient;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        color: $white;
+        top: 100%;
+        width: 29%;
+        margin-left: 4%;
+        padding: 0.3rem;
+        border-radius: 2rem;
+        margin-top: 0.5rem;
+    
+        span{
+            &:hover{
+                color: $light-secondary;
+            }
+        }
+        
+        .page a {
+            color: $light-primary;
+            text-decoration: none;
+        
+            &:hover{
+                color: $white;
+            }
+        }
+    
+        .current{
+            color: $white;
+                    &:hover{
+                        color: $white;
+                    } 
+        }
+    
+        .next{
+            a{
+                color: $white;
+                &:hover{
+                    color: $light-primary;
+                }
+            }
+        }
+    
+        .last{
+            a{
+                color: $white;
+                &:hover{
+                    color: $light-primary;
+                }
+            }
+        }
+    
+        .prev{
+            a{
+                color: $white;
+                &:hover{
+                    color: $light-primary;
+                }
+            }
+        }
+    
+        .first{
+            a{
+                color: $white;
+                &:hover{
+                    color: $light-primary;
+                }
+            }
+        }
+    }
+}
 
     
     

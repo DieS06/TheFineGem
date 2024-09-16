@@ -13,7 +13,7 @@
                     <% if current_user.client?%>
                         <li class="dropdown">
                             <a class="link-nav" href="/hotels" aria-expanded="false">
-                                Hotels Catalog
+                                Hotels
                             </a>
                         </li>
                     <% else%>
@@ -21,7 +21,7 @@
                             <%= link_to 'Users', users_path, class: 'link-nav', aria: { expanded: false } %>
                         </li> 
                         <li class="dropdown">
-                             <%= link_to 'Hotels Catalog', hotels_path, class: 'link-nav', aria: { expanded: false } %>
+                             <%= link_to 'Hotels', hotels_path, class: 'link-nav', aria: { expanded: false } %>
                         </li> 
                         <li class="dropdown">
                              <%= link_to 'My Hotel', rooms_path, class: 'link-nav', aria: { expanded: false } %>
@@ -36,21 +36,21 @@
             </ul> 
         </div>
         <div class="column log-btns">
-            <% if user_signed_in? && %>
-            <div class="btn-container">
-                <div class="container-fluid">
-                    <div class="dropdown">
-                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">                    
-                            <i class="bi bi-person-circle"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                           <span class="ms-2"> <%= current_user.full_name %></span>
+            <% if user_signed_in? %>
+                <div class="btn-container">
+                    <div class="container-fluid">
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">                    
+                                <i class="bi bi-person-circle"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <span class="ms-2"><%= current_user.full_name %></span>
                                 <li><%= link_to 'Profile', edit_registration_path(current_user), class: 'nav-link' %></li>
                                 <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
-                        </ul>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
             <% else %>
                 <div class="btn-container">
                     <% if request.path == new_session_path(resource_name) %>

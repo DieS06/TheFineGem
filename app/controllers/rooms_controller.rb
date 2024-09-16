@@ -15,10 +15,6 @@ class RoomsController < ApplicationController
 
   # GET /rooms/1
   def show
-    @rooms = Room.where(id: room_ids).page(params[:page]).per(12)
-  rescue ActiveRecord::RecordNotFound
-      flash[:alert] = "Not rooms available for this hotel."
-      redirect_to root_path
   end
 
   # GET /rooms/new

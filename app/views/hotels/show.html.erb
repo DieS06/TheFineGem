@@ -33,7 +33,7 @@
         <div class="reservation-instructions">
             <p class="sel-title">Select both dates and a room, by clicking on "Select" button</p> 
             <%= form_with url: reserve_room_path, method: :post do |form| %>
-                <%= render 'hotels/card_sel_room', locals: { hotel_rooms: @hotel.rooms, room_type: @room_type } %>
+                <%= render partial: 'card_sel_room', locals: { hotel_rooms: @hotel.rooms, room_type: @room_type, grouped_rooms: @grouped_rooms } %>
             <% end %>
         </div>          
     </div>

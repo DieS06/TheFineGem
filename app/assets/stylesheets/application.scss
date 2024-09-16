@@ -23,7 +23,6 @@
  @import "devise/log-in";
  @import "devise/sign-up";
  @import "hotels/index";
- @import "hotels/show";
  @import "hotels/new";
  @import "reserve_rooms/new";
  @import "_variables";
@@ -226,8 +225,6 @@ th {
     text-align: center;
 }
 
-
-
 .alert-danger{
     text-align: center;
     background-color: rgba(red, 1);
@@ -247,3 +244,4 @@ th {
     margin-bottom: 1.5rem;
     width: 80%;
 }
+

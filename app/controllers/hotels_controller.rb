@@ -25,17 +25,21 @@ class HotelsController < ApplicationController
     @check_in_date = params[:check_in_date]
     @check_out_date = params[:check_out_date]
 
-    @min_price = @hotel.rooms.minimum(:price_per_night)
-    @max_price = @hotel.rooms.maximum(:price_per_night)
-    @rooms = Room.where(id: room_ids).page(params[:page]).per(12)
-    @room = @rooms.first
+    @grouped_rooms = @hotel.rooms.group_by(&:room_type).transform_values do |rooms|
+      Kaminari.paginate_array(rooms).page(params[:page]).per(3)
+    end
+    @room = @hotel.rooms.first
     @room_type = @room.room_type if @room
 
-    if @rooms = @rooms.where(status: "available") && @check_in_date.present? && @check_out_date.present?
+    @min_price = @hotel.rooms.minimum(:price_per_night)
+    @max_price = @hotel.rooms.maximum(:price_per_night)
+
+    available_rooms = @hotel.rooms.where(status: "available")
+    if available_rooms.exists? && @check_in_date.present? && @check_out_date.present?
       redirect_to new_reserve_room_path(hotel_id: @hotel.id, check_in_date: @check_in_date, check_out_date: @check_out_date)
     else
-      flash[:alert] = "Please provide both check-in and check-out dates."
-      redirect_to hotel_path(@hotel)
+      flash.now[:alert] = "Please provide both check-in and check-out dates."
+      render :show
     end
   rescue ActiveRecord::RecordNotFound
     flash[:alert] = "Hotel not found."
